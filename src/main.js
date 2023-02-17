@@ -40,9 +40,6 @@ const slide1 = new Swiper('.why', {
   // observer: true,
   // observeParents: true,
   // slidesPerView: 3,
-  // grid: {
-  //   rows: 2,
-  // },
 
   navigation: {
     nextEl: '.why__leftarrow',
@@ -51,6 +48,13 @@ const slide1 = new Swiper('.why', {
 
   breakpoints: {
     // when window width is >= 640px
+    240: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      grid: {
+        rows: 2,
+      },
+    },
     640: {
       slidesPerView: 3,
       slidesPerGroup: 3,
@@ -59,6 +63,10 @@ const slide1 = new Swiper('.why', {
       },
       // spaceBetween: 0,
     },
+    // 900: {
+    //   slidesPerView: 3,
+    //   slidesPerGroup: 3,
+    // },
   },
 })
 
@@ -79,4 +87,9 @@ const slide1 = new Swiper('.why', {
   })
 })($)
 
+const mql = window.matchMedia('(max-width: 640px)')
+
+mql.onchange = (e) => {
+  slide1.update()
+}
 console.log('loaded test')

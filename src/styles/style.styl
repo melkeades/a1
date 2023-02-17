@@ -21,18 +21,6 @@ html.lenis
   // transform-origin: left top;
   z-index -1
 
-@media screen and (max-width 991px)
-  .hero__info__title-mark::before
-    transform translate(-50%, -50%) scale(0.7)
-
-@media screen and (max-width 768px)
-  .hero__info__title-mark::before
-    transform translate(-50%, -50%) scale(0.5)
-
-@media screen and (max-width 478px)
-  .consultation__content__img
-    filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
-
 .what__left::before
   content ''
   display block
@@ -82,3 +70,19 @@ html.w-editor::after
 .consultation__content__img
   // filter: drop-shadow(0 0 0.75rem crimson);
   filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
+
+@media screen and (max-width 991px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.7)
+
+@media screen and (max-width 768px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.5)
+
+@media only screen and (max-width 640px)
+  .consultation__content__img
+    filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
+
+  .swiper
+    height 600px !important
+    // opacity 0.3 !important
