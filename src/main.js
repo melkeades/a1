@@ -35,7 +35,14 @@ requestAnimationFrame(raf)
 // why -------------------------
 Swiper.use([Navigation, Pagination, Grid])
 
-const slide1 = new Swiper('.why', {
+let howSlider = new Swiper('.g1', {
+  spaceBetween: 40,
+  navigation: {
+    nextEl: '.how__leftarrow',
+    prevEl: '.how__rightarrow',
+  },
+})
+const slide1 = new Swiper('.whyX', {
   speed: 800,
   // observer: true,
   // observeParents: true,
@@ -87,9 +94,68 @@ const slide1 = new Swiper('.why', {
   })
 })($)
 
+const howMq = window.matchMedia('(max-width: 767px)')
 const mql = window.matchMedia('(max-width: 640px)')
 
-mql.onchange = (e) => {
+howMq.onchange = (e) => {
+  if (e.matches) {
+    // 767 or less
+    // wrap()
+  } else {
+    // more than 767
+    // unwrap()
+  }
+}
+mql.onchange = () => {
   slide1.update()
 }
 console.log('loaded test')
+
+function wrap(element) {
+  // const element = Array.prototype.shift(arguments)
+  const wrappingElement = document.querySelector(element)
+  let wrapperTag = 'div',
+    wrapperAttributes = { data: {} }
+
+  const parsString = (string) => {
+    const symbol = string.charAt(0)
+    const value = string.slice(1)
+
+    if (symbol === '#') {
+      wrapperAttributes.id = value
+    } else if (symbol === '.') {
+      wrapperAttributes.class = value
+    } else if (symbol === '<') {
+      wrapperTag = value
+    }
+  }
+
+  for (let i = 1; i <= arguments.length; i++) {
+    if (typeof arguments[i] === 'string' || arguments[i] instanceof String) {
+      parsString(arguments[i])
+    } else if (
+      typeof arguments[i] === 'object' &&
+      !Array.isArray(arguments[i]) &&
+      arguments[i] !== null
+    ) {
+      for (const newProperty in arguments[i]) {
+        wrapperAttributes.data['data-' + newProperty] =
+          arguments[i][newProperty]
+      }
+    }
+  }
+
+  const wrapperContainer = document.createElement(wrapperTag)
+
+  if (wrapperAttributes.id) {
+    wrapperContainer.setAttribute('id', wrapperAttributes.id)
+  }
+  if (wrapperAttributes.class) {
+    wrapperContainer.setAttribute('class', wrapperAttributes.class)
+  }
+  for (const attribute in wrapperAttributes.data) {
+    wrapperContainer.setAttribute(attribute, wrapperAttributes.data[attribute])
+  }
+  wrappingElement.replaceWith(wrapperContainer)
+  wrapperContainer.appendChild(wrappingElement)
+}
