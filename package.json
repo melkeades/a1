@@ -22,6 +22,8 @@
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "split-type": "^0.3.3",
+    "stylus": "^0.59.0",
+    "swiper": "^9.0.5",
     "vite": "^2.7.2",
     "vite-plugin-eslint": "^1.3.0"
   }

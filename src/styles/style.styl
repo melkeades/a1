@@ -1,0 +1,55 @@
+// .swiper-pagination-bullets.swiper-pagination-horizontal
+// width auto
+html.lenis
+  height auto
+
+.accordion__text
+  display none
+
+.hero__info__title
+  z-index 20
+
+.hero__info__titleMark
+  z-index 20
+
+.hero__info__title-mark::before
+  content url('https:\/\/uploads-ssl.webflow.com\/63eaa604a8a840ce06c9aa6d\/63eb9be563b7cf6636cf97b2_Vectors-Wrapper.svg')
+  position absolute
+  top 60%
+  left 60%
+  transform translate(-50%, -50%)
+  // transform-origin: left top;
+  z-index -1
+
+@media screen and (max-width 991px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.7)
+
+@media screen and (max-width 768px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.5)
+
+@media screen and (max-width 478px)
+  .consultation__content__img
+    filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
+
+.what__left::before
+  content ''
+  display block
+  width 240px
+  height 100%
+  background #FB9700
+  position absolute
+  top 0
+  left 0
+  transform translateX(-100%)
+
+html.w-editor::after
+  display none !important
+
+.why__slider
+  filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.05))
+
+.consultation__content__img
+  // filter: drop-shadow(0 0 0.75rem crimson);
+  filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
