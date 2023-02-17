@@ -6,10 +6,12 @@ import gsap from 'gsap'
 // import ScrollToPlugin from 'gsap/ScrollToPlugin '
 import ScrollTrigger from 'gsap/ScrollTrigger '
 import $ from 'jquery'
-import jQuery from 'jquery'
 import SplitType from 'split-type'
-import Swiper from 'swiper'
+import Swiper, { Navigation, Pagination, Grid } from 'swiper'
 import 'swiper/css'
+import 'swiper/css/grid'
+// import 'swiper/css/navigation'
+// import 'swiper/css/pagination'
 
 const lenis = new Lenis({
   duration: 1.2,
@@ -31,22 +33,32 @@ function raf(time) {
 requestAnimationFrame(raf)
 
 // why -------------------------
+Swiper.use([Navigation, Pagination, Grid])
 
-// $('.why').each(function (index) {
-//   const swiper = new Swiper($(this).find('.why__slider')[0], {
-//     slidesPerView: 3,
-//   })
-// })
+const slide1 = new Swiper('.why', {
+  speed: 800,
+  // observer: true,
+  // observeParents: true,
+  // slidesPerView: 3,
+  // grid: {
+  //   rows: 2,
+  // },
 
-const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'horizontal',
-  loop: true,
-
-  // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.why__leftarrow',
+    prevEl: '.why__rightarrow',
+  },
+
+  breakpoints: {
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      grid: {
+        rows: 1,
+      },
+      // spaceBetween: 0,
+    },
   },
 })
 
@@ -65,6 +77,6 @@ const swiper = new Swiper('.swiper', {
       $('html').animate({ scrollTop: $(this).offset().top - 180 }, 800)
     }, 400)
   })
-})(jQuery)
+})($)
 
 console.log('loaded test')
