@@ -7,10 +7,19 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger '
 import $ from 'jquery'
 import SplitType from 'split-type'
-import Swiper, { Navigation, Pagination, Grid } from 'swiper'
+import Swiper, {
+  Navigation,
+  Pagination,
+  Grid,
+  Thumbs,
+  Controller,
+  EffectFade,
+} from 'swiper'
 import 'swiper/css'
 import 'swiper/css/grid'
-// import 'swiper/css/navigation'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
+
 // import 'swiper/css/pagination'
 
 const lenis = new Lenis({
@@ -32,13 +41,13 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-// why -------------------------
-Swiper.use([Navigation, Pagination, Grid])
+// why -------------------------Fade
+Swiper.use([Navigation, Pagination, Grid, Thumbs, Controller, EffectFade])
 
 let howSlider
 const howSliderInit = () => {
   howSlider = new Swiper('.how__swiper', {
-    speed: 800,
+    speed: 600,
     spaceBetween: 40,
     slidesPerView: 1,
     slidesPerGroup: 1,
@@ -52,7 +61,7 @@ if (window.innerWidth <= 767) {
   howSliderInit()
 }
 const slide1 = new Swiper('.why__swiper', {
-  speed: 800,
+  speed: 600,
   spaceBetween: 30,
   // observer: true,
   // observeParents: true,
@@ -87,6 +96,36 @@ const slide1 = new Swiper('.why__swiper', {
     // },
   },
 })
+
+const resultsLogos = new Swiper('.why__logos', {
+  speed: 600,
+  spaceBetween: 60,
+  slidesPerView: 'auto',
+})
+
+const resultsInfo = new Swiper('.results__info', {
+  speed: 400,
+  spaceBetween: 60,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+})
+
+const resultsImg = new Swiper('.results__img', {
+  speed: 600,
+  spaceBetween: 20,
+  slidesPerView: 1,
+  thumbs: {
+    swiper: resultsLogos,
+  },
+  navigation: {
+    nextEl: '.results__leftarrow',
+    prevEl: '.results__rightarrow',
+  },
+})
+resultsImg.controller.control = resultsInfo
+resultsInfo.controller.control = resultsImg
 
 const howMq = window.matchMedia('(max-width: 767px)')
 const mql = window.matchMedia('(max-width: 640px)')

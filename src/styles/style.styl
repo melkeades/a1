@@ -35,6 +35,10 @@ html.w-editor::after
   display none !important
 
 // swiper-------------------
+.swiper-wrapper
+  grid-column-gap 0 !important
+  grid-row-gap 0 !important
+
 .why-wrap3
   filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.05))
 
@@ -59,6 +63,20 @@ html.w-editor::after
 
 .how__container .swiper-wrapper
   display block
+
+.results__logos__slide
+  width auto !important
+
+.why__logos .swiper-slide-thumb-active
+  // background #000
+  filter none
+  opacity 1
+
+.results__slide__img-wrap
+  // max-width 100% !important
+  // width 100% !important
+  img
+    // max-width 100% !important
 
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
