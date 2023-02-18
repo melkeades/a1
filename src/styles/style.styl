@@ -38,6 +38,10 @@ html.w-editor::after
 .why-wrap3
   filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.05))
 
+.how__swiper
+  margin 0 !important
+  // width 100% !important
+
 .why__swiper
   margin 0 !important
   overflow visible !important
@@ -51,7 +55,10 @@ html.w-editor::after
   filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
 
 .how__container
-  padding 0 30px !important
+  // padding 0 30px !important
+
+.how__container .swiper-wrapper
+  display block
 
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
@@ -61,13 +68,16 @@ html.w-editor::after
   .hero__info__title-mark::before
     transform translate(-50%, -50%) scale(0.5)
 
+  .how__container .swiper-wrapper
+    display flex
+
 @media only screen and (max-width 640px)
   .consultation__content__img
     filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
 
   .how__swiper
     overflow hidden !important
-    width 400px !important
+    // width 400px !important
 
   .why__swiper
     overflow hidden !important

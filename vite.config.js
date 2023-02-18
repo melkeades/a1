@@ -11,6 +11,9 @@ export default defineConfig({
       host: 'localhost',
       protocol: 'ws',
     },
+    watch: {
+      usePolling: true,
+    },
   },
   build: {
     minify: true,
