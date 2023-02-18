@@ -35,18 +35,22 @@ requestAnimationFrame(raf)
 // why -------------------------
 Swiper.use([Navigation, Pagination, Grid])
 
-let howSlider = new Swiper('.g1', {
+let howSlider = new Swiper('.g1X', {
   spaceBetween: 40,
+
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   navigation: {
     nextEl: '.how__leftarrow',
     prevEl: '.how__rightarrow',
   },
 })
-const slide1 = new Swiper('.whyX', {
+const slide1 = new Swiper('.why__swiper', {
   speed: 800,
+  spaceBetween: 30,
   // observer: true,
   // observeParents: true,
-  // slidesPerView: 3,
+  // slidesPerView: 3, // columns per row
 
   navigation: {
     nextEl: '.why__leftarrow',
@@ -54,10 +58,11 @@ const slide1 = new Swiper('.whyX', {
   },
 
   breakpoints: {
-    // when window width is >= 640px
+    // 240 and up
     240: {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
+      spaceBetween: 15,
+      slidesPerView: 2,
+      slidesPerGroup: 2, // columns per swipe
       grid: {
         rows: 2,
       },
