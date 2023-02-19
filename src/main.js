@@ -98,16 +98,24 @@ const slide1 = new Swiper('.why__swiper', {
 })
 
 const resultsLogos = new Swiper('.why__logos', {
+  speed: 600,
   breakpoints: {
     240: {
       spaceBetween: 30,
       slidesPerView: 3,
-      // slidesPerGroup: 3, // columns per swipe
+      slidesPerGroup: 3, // columns per swipe
     },
     480: {
-      speed: 600,
+      spaceBetween: 40,
+      // slidesPerView: 3,
+      // slidesPerGroup: 2, // columns per swipe
+      slidesPerView: 'auto',
+    },
+    768: {
       spaceBetween: 60,
+      // slidesPerView: 6,
       // slidesPerView: 'auto',
+      // slidesPerGroup: 3, // columns per swipe
     },
   },
 })
