@@ -52,8 +52,8 @@ const howSliderInit = () => {
     slidesPerView: 1,
     slidesPerGroup: 1,
     navigation: {
-      nextEl: '.how__leftarrow',
-      prevEl: '.how__rightarrow',
+      nextEl: '.how__rightarrow',
+      prevEl: '.how__leftarrow',
     },
   })
 }
@@ -68,8 +68,8 @@ const slide1 = new Swiper('.why__swiper', {
   // slidesPerView: 3, // columns per row
 
   navigation: {
-    nextEl: '.why__leftarrow',
-    prevEl: '.why__rightarrow',
+    nextEl: '.why__rightarrow',
+    prevEl: '.why__leftarrow',
   },
 
   breakpoints: {
@@ -98,9 +98,18 @@ const slide1 = new Swiper('.why__swiper', {
 })
 
 const resultsLogos = new Swiper('.why__logos', {
-  speed: 600,
-  spaceBetween: 60,
-  slidesPerView: 'auto',
+  breakpoints: {
+    240: {
+      spaceBetween: 30,
+      slidesPerView: 3,
+      // slidesPerGroup: 3, // columns per swipe
+    },
+    480: {
+      speed: 600,
+      spaceBetween: 60,
+      // slidesPerView: 'auto',
+    },
+  },
 })
 
 const resultsInfo = new Swiper('.results__info', {
@@ -120,10 +129,11 @@ const resultsImg = new Swiper('.results__img', {
     swiper: resultsLogos,
   },
   navigation: {
-    nextEl: '.results__leftarrow',
-    prevEl: '.results__rightarrow',
+    nextEl: '.results__rightarrow',
+    prevEl: '.results__leftarrow',
   },
 })
+
 resultsImg.controller.control = resultsInfo
 resultsInfo.controller.control = resultsImg
 

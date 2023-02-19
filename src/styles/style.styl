@@ -64,6 +64,9 @@ html.w-editor::after
 .how__container .swiper-wrapper
   display block
 
+.results__img
+  margin 0 !important
+
 .results__logos__slide
   width auto !important
 
@@ -71,12 +74,6 @@ html.w-editor::after
   // background #000
   filter none
   opacity 1
-
-.results__slide__img-wrap
-  // max-width 100% !important
-  // width 100% !important
-  img
-    // max-width 100% !important
 
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
@@ -88,6 +85,13 @@ html.w-editor::after
 
   .how__container .swiper-wrapper
     display flex
+
+  .results__img
+    width auto
+    height auto !important
+
+  .results__img-wrap
+    overflow hidden
 
 @media only screen and (max-width 640px)
   .consultation__content__img
@@ -108,6 +112,19 @@ html.w-editor::after
 @media only screen and (max-width 480px)
   .why__swiper
     height 400px
+
+  .why__logos
+    // height 300px
+    width 100%
+    overflow visible !important
+
+    .logos__item
+      height auto
+      // width auto
+      // max-height 80px
+      max-width 120px
+      // width 120px
+      // height auto
 
 .how__titleNav__arrows
   z-index 100 !important
