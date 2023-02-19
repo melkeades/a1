@@ -145,6 +145,48 @@ const resultsImg = new Swiper('.results__img', {
 resultsImg.controller.control = resultsInfo
 resultsInfo.controller.control = resultsImg
 
+const testQuote = new Swiper('.testimonials__quote', {
+  speed: 600,
+  spaceBetween: 20,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: '.testimonials__rightarrow',
+    prevEl: '.testimonials__leftarrow',
+  },
+})
+
+const testName = new Swiper('.testimonials__name', {
+  speed: 600,
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
+  slidesPerView: 1,
+})
+
+const testLogoClass = 'testimonials__logo'
+const testLogos = document.querySelectorAll('.' + testLogoClass)
+const testLogoActiveClass = testLogoClass + '--active'
+
+testQuote.controller.control = testName
+testQuote.on('slideChange', () => {
+  console.log('slide changed to' + testQuote.activeIndex)
+  testLogos.forEach((f) => f.classList.remove(testLogoActiveClass))
+  testLogos[testQuote.activeIndex].classList.toggle(testLogoActiveClass)
+})
+
+testLogos.forEach((logo) => {
+  logo.addEventListener('click', (e) => {
+    const target = e.currentTarget // bubble outside of svg Gs innards to div
+    if (target.nodeName === 'DIV') {
+      // just to be sure ^^
+      const index = Array.from(target.parentNode.children).indexOf(target)
+      testQuote.slideTo(index)
+    }
+  })
+})
+
+const updateTestLogo = () => {}
 const howMq = window.matchMedia('(max-width: 767px)')
 const mql = window.matchMedia('(max-width: 640px)')
 
@@ -163,18 +205,16 @@ mql.onchange = () => {
 console.log('loaded test')
 
 // faq -------------------------------------------
-;(function ($) {
-  $('.accordion__title').on('click', function () {
-    $(this).children('.accordion__arrow').toggleClass('rotate')
-    $('.accordion__arrow')
-      .not($(this).children('.accordion__arrow'))
-      .removeClass('rotate')
-    $(this).next().slideToggle(800)
-    $('.accordion__text').not($(this).next()).slideUp('fast')
+$('.accordion__title').on('click', function () {
+  $(this).children('.accordion__arrow').toggleClass('rotate')
+  $('.accordion__arrow')
+    .not($(this).children('.accordion__arrow'))
+    .removeClass('rotate')
+  $(this).next().slideToggle(800)
+  $('.accordion__text').not($(this).next()).slideUp('fast')
 
-    // $(this).offset().top-"distance from top"}, "scroll speed");}, "animation delay depending on inner content length");
-    setTimeout(() => {
-      $('html').animate({ scrollTop: $(this).offset().top - 180 }, 800)
-    }, 400)
-  })
-})($)
+  // $(this).offset().top-"distance from top"}, "scroll speed");}, "animation delay depending on inner content length");
+  setTimeout(() => {
+    $('html').animate({ scrollTop: $(this).offset().top - 180 }, 800)
+  }, 400)
+})

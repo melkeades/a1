@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/swiper.thumbnails.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1676820555552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1676820635288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -97,5 +97,5 @@\n \n       app.init()\n     })\n   }\n-})(jQuery, window)\n+})($, window)\n"
+                }
+            ],
+            "date": 1676820555552,
+            "name": "Commit-0",
+            "content": "(function ($, window) {\n\n    /**\n     * Enable thumbnail support for Swiper\n     * @param swiper (pass swiper element)\n     * @param settings (pass custom options)\n     */\n    window.swiperThumbs = function (swiper, settings) {\n\n        /**\n         * Loop over swiper instances\n         */\n        $(swiper).each(function () {\n\n            var _this = this;\n\n            /**\n             * Default settings\n             */\n            var options = {\n                element: 'swiper-thumbnails',\n                activeClass: 'is-active',\n                scope: undefined\n            };\n\n            /**\n             * Merge user settings and default settings\n             */\n            $.extend(options, settings);\n\n            var element;\n            if (typeof options.scope !== \"undefined\") {\n                element = $(_this.wrapperEl).closest(options.scope).find('.' + options.element);\n            } else {\n                element = $('.' + options.element);\n            }\n\n            /**\n             * Get real activeIndex\n             * @returns {*}\n             */\n            var realIndex = function (index) {\n                // if index doesn't exist set index to activeIndex of swiper\n                if (index === undefined) index = _this.activeIndex;\n\n                // Check if swiper instance has loop before getting real index\n                if (_this.params.loop) {\n                    return parseInt(_this.slides.eq(index).attr('data-swiper-slide-index'));\n                } else {\n                    return index;\n                }\n            };\n\n            var app = {\n\n                init: function () {\n                    app.bindUIevents();\n                    app.updateActiveClasses(realIndex(_this.activeIndex));\n                },\n\n                bindUIevents: function () {\n                    /**\n                     * Bind click events to thumbs\n                     */\n                    element.children().each(function () {\n                        $(this).on('click', function () {\n\n                            // Get clicked index\n                            var index = parseInt($(this).index());\n\n                            // Get difference between item clicked and current real active index.\n                            var difference = (index - realIndex());\n\n                            // Move to slide that makes sense for the user by\n                            // checking what the current active slide is and adding the difference\n                            // this makes sure the swiper moves to a natural direction the user expects.\n                            app.moveToSlide(_this.activeIndex + difference);\n                        })\n                    });\n\n                    /**\n                     * Update thumbs on slideChange\n                     */\n                    _this.on('slideChange', function (swiper) {\n                        app.updateActiveClasses(realIndex())\n                    });\n                },\n\n                moveToSlide: function (index) {\n                    _this.slideTo(index);\n                },\n\n                updateActiveClasses: function (index) {\n                    element.children().removeClass(options.activeClass);\n                    element.children().eq(index).addClass(options.activeClass);\n                }\n            };\n\n            app.init();\n\n        });\n\n    };\n\n}(jQuery, window));\n"
+        }
+    ]
+}
