@@ -20,7 +20,7 @@ import 'swiper/css/grid'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
 
-// import 'swiper/css/pagination'
+import 'swiper/css/pagination'
 
 const lenis = new Lenis({
   duration: 1.2,
@@ -51,6 +51,11 @@ const howSliderInit = () => {
     spaceBetween: 40,
     slidesPerView: 1,
     slidesPerGroup: 1,
+    pagination: {
+      el: '.swiper-pagination',
+      // bulletActiveClass: '.how__pagination__bullet--active',
+      // bulletClass: '.how__pagination__bullet',
+    },
     navigation: {
       nextEl: '.how__rightarrow',
       prevEl: '.how__leftarrow',
@@ -158,6 +163,7 @@ const testQuote = new Swiper('.testimonials__quote', {
 const testName = new Swiper('.testimonials__name', {
   speed: 600,
   effect: 'fade',
+  allowTouchMove: false,
   fadeEffect: {
     crossFade: true,
   },

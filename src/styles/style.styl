@@ -59,7 +59,17 @@ html.w-editor::after
   filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
 
 .how__container
-  // padding 0 30px !important
+  --swiper-theme-color #fb9700
+  --swiper-pagination-bullet-size 10px
+  --swiper-pagination-bullet-inactive-color white
+  --swiper-pagination-bullet-inactive-opacity 1
+  --swiper-pagination-bullet-horizontal-gap 10px
+
+.how__container .swiper-wrapper
+  display block
+
+.results__img
+  margin 0 !important
 
 .how__container .swiper-wrapper
   display block
@@ -112,6 +122,7 @@ html.w-editor::after
 
   .how__container .swiper-wrapper
     display flex
+    align-items start
 
   .results__img
     width auto
@@ -152,6 +163,25 @@ html.w-editor::after
       max-width 120px
       // width 120px
       // height auto
+
+  .testimonials__item__logos
+    justify-content space-evenly
+
+  .testimonials__logo
+    display flex
+    justify-content center
+
+    svg
+      max-height 60px
+      max-width 80px
+
+.swiper-pagination
+  position relative !important
+
+.how__pagination__bullet--active
+  // background-color white !important
+
+var(--swiper-pagination-bullet-inactive-color, #fff) !important
 
 .how__titleNav__arrows
   z-index 100 !important
