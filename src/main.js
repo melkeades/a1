@@ -14,11 +14,13 @@ import Swiper, {
   Thumbs,
   Controller,
   EffectFade,
+  Autoplay,
 } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/grid'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
+import 'swiper/css/autoplay'
 
 import 'swiper/css/pagination'
 
@@ -42,7 +44,15 @@ function raf(time) {
 requestAnimationFrame(raf)
 
 // why -------------------------Fade
-Swiper.use([Navigation, Pagination, Grid, Thumbs, Controller, EffectFade])
+Swiper.use([
+  Navigation,
+  Pagination,
+  Grid,
+  Thumbs,
+  Controller,
+  EffectFade,
+  Autoplay,
+])
 
 let howSlider
 const howSliderInit = () => {
@@ -107,8 +117,9 @@ const resultsLogos = new Swiper('.why__logos', {
   breakpoints: {
     240: {
       spaceBetween: 30,
-      slidesPerView: 3,
-      slidesPerGroup: 3, // columns per swipe
+      // slidesPerView: 3,
+      slidesPerView: 'auto',
+      slidesPerGroup: 1, // columns per swipe
     },
     480: {
       spaceBetween: 40,
@@ -145,6 +156,9 @@ const resultsImg = new Swiper('.results__img', {
     nextEl: '.results__rightarrow',
     prevEl: '.results__leftarrow',
   },
+  autoplay: {
+    delay: 5000,
+  },
 })
 
 resultsImg.controller.control = resultsInfo
@@ -157,6 +171,9 @@ const testQuote = new Swiper('.testimonials__quote', {
   navigation: {
     nextEl: '.testimonials__rightarrow',
     prevEl: '.testimonials__leftarrow',
+  },
+  autoplay: {
+    delay: 5000,
   },
 })
 
