@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/about.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1676923050195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1676923076134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-console.log('about')\r\n+console.log('aboutx')\r\n"
+                },
+                {
+                    "date": 1676923403850,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,15 @@\n-console.log('aboutx')\r\n+const tlSec2Scroll = gsap.timeline({ defaults: { ease: 'none' } })\r\n+\r\n+tlSec1Scroll.to('.sec1', { opacity: 0.5, rotationX: -80 })\r\n+tlSec2Scroll.to('.sec2__info', { opacity: 1 })\r\n+\r\n+ScrollTrigger.create({\r\n+    // markers: true,\r\n+    trigger: '.sec1',\r\n+    start: 'top 20%',\r\n+    // end: 'bottom 20%',\r\n+    animation: tlSec1Scroll,\r\n+    scrub: 1,\r\n+    pin: true,\r\n+    pinSpacing: false,\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1676924298875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import gsap from 'gsap';\r\n const tlSec2Scroll = gsap.timeline({ defaults: { ease: 'none' } })\r\n \r\n tlSec1Scroll.to('.sec1', { opacity: 0.5, rotationX: -80 })\r\n tlSec2Scroll.to('.sec2__info', { opacity: 1 })\r\n"
+                },
+                {
+                    "date": 1676924312928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import gsap from 'gsap'\r\n+import ScrollTrigger from 'gsap/ScrollTrigger'\r\n const tlSec2Scroll = gsap.timeline({ defaults: { ease: 'none' } })\r\n \r\n tlSec1Scroll.to('.sec1', { opacity: 0.5, rotationX: -80 })\r\n tlSec2Scroll.to('.sec2__info', { opacity: 1 })\r\n"
+                },
+                {
+                    "date": 1676924453912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n import gsap from 'gsap'\r\n import ScrollTrigger from 'gsap/ScrollTrigger'\r\n-const tlSec2Scroll = gsap.timeline({ defaults: { ease: 'none' } })\r\n \r\n-tlSec1Scroll.to('.sec1', { opacity: 0.5, rotationX: -80 })\r\n-tlSec2Scroll.to('.sec2__info', { opacity: 1 })\r\n+const aboutImg1scroll = gsap.timeline({ defaults: { ease: 'none' } })\r\n \r\n+aboutImg1scroll.to('.sec2__info', { opacity: 1 })\r\n+\r\n ScrollTrigger.create({\r\n   // markers: true,\r\n   trigger: '.sec1',\r\n   start: 'top 20%',\r\n   // end: 'bottom 20%',\r\n-  animation: tlSec1Scroll,\r\n+  animation: aboutImg1scroll,\r\n   scrub: 1,\r\n   pin: true,\r\n   pinSpacing: false,\r\n })\r\n"
+                }
+            ],
+            "date": 1676923050195,
+            "name": "Commit-0",
+            "content": "\r\nconsole.log('about')\r\n"
+        }
+    ]
+}

@@ -21,8 +21,8 @@ import 'swiper/css/grid'
 import 'swiper/css/navigation'
 import 'swiper/css/effect-fade'
 import 'swiper/css/autoplay'
-
 import 'swiper/css/pagination'
+import './about'
 
 const lenis = new Lenis({
   duration: 1.2,
