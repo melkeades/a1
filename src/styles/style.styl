@@ -39,7 +39,7 @@ html.w-editor::after
   grid-column-gap 0 !important
   grid-row-gap 0 !important
 
-.why-wrap3
+.why-wrap2
   filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.05))
 
 .how__swiper
@@ -50,7 +50,7 @@ html.w-editor::after
   margin 0 !important
   overflow visible !important
   width 960px
-  height 280px
+  // height 280px
 
 .leftarrow, .rightarrow
   cursor pointer
@@ -64,9 +64,6 @@ html.w-editor::after
   --swiper-pagination-bullet-inactive-color white
   --swiper-pagination-bullet-inactive-opacity 1
   --swiper-pagination-bullet-horizontal-gap 10px
-
-.how__container .swiper-wrapper
-  display block
 
 .results__img
   margin 0 !important
@@ -141,7 +138,7 @@ html.w-editor::after
 
   .why__swiper
     overflow hidden !important
-    width 100%
+    width calc(100% - 60px)
     height 600px
 
   .why__swiper-slide
@@ -188,13 +185,6 @@ var(--swiper-pagination-bullet-inactive-color, #fff) !important
 
 .text-img__img--career
   clip-path url('#maskCareer')
-
-.f
-  position absolute
-  top 0
-  left 0
-  width 100%
-  height 100%
 
 .text-img__img--success
   clip-path url('#maskSuccess')

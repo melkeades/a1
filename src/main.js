@@ -225,7 +225,7 @@ howMq.onchange = (e) => {
 mql.onchange = () => {
   slide1.update()
 }
-console.log('loaded test')
+console.log('xloaded test')
 
 // faq -------------------------------------------
 $('.accordion__title').on('click', function () {
