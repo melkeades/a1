@@ -4,7 +4,34 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const imgsToScroll = gsap.utils.toArray('.text-img__img')
+const captionsToScroll = gsap.utils.toArray('.text-img__img__caption')
+// console.log(imgsToScroll)
+
+captionsToScroll.forEach((cap) => {
+  gsap.to(cap, {
+    y: '-250%',
+    scrollTrigger: {
+      start: 'top bottom',
+      end: 'bottom top',
+      trigger: cap,
+      scrub: true,
+    },
+  })
+})
 imgsToScroll.forEach((img) => {
+  // const caption = img.getElementsByClassName('text-img__img__caption')
+
+  // if (caption) {
+  //   console.log(caption)
+  //   gsap.to(caption, {
+  //     y: '-120%',
+  //     opacity: 0,
+  //     scrollTrigger: {
+  //       trigger: img,
+  //       scrub: true,
+  //     },
+  //   })
+  // }
   gsap.to(img, {
     backgroundPositionY: '-20%',
     scrollTrigger: {
@@ -12,7 +39,7 @@ imgsToScroll.forEach((img) => {
       scrub: true,
     },
   })
-  // console.log(img)
+  // console.log()
   // .getElementsByClassName('text-img__img__caption')
   // gsap.to(img, {
   //   backgroundPositionY: '-120%',
