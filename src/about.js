@@ -1,7 +1,35 @@
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import Swiper, {
+  Navigation,
+  Pagination,
+  Grid,
+  Thumbs,
+  Controller,
+  EffectFade,
+  Autoplay,
+  Scrollbar,
+} from 'swiper'
+import 'swiper/css'
+import 'swiper/css/grid'
+import 'swiper/css/navigation'
+import 'swiper/css/effect-fade'
+import 'swiper/css/autoplay'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 
 gsap.registerPlugin(ScrollTrigger)
+
+Swiper.use([
+  Navigation,
+  // Pagination,
+  // Grid,
+  // Thumbs,
+  // Controller,
+  // EffectFade,
+  // Autoplay,
+  Scrollbar,
+])
 
 const imgsToScroll = gsap.utils.toArray('.text-img__img')
 const captionsToScroll = gsap.utils.toArray('.text-img__img__caption')
@@ -69,3 +97,20 @@ imgsToScroll.forEach((img) => {
 //   // pin: true,
 //   // pinSpacing: false,
 // })
+const careerSlider = new Swiper('.my-career__swiper', {
+  speed: 600,
+  spaceBetween: 0,
+  slidesPerView: 'auto',
+  freeMode: true,
+
+  navigation: {
+    nextEl: '.my-career__rightarrow',
+    prevEl: '.my-career__leftarrow',
+  },
+  scrollbar: {
+    el: '.my-career__nav',
+    draggable: true,
+    snapOnRelease: false,
+    dragClass: 'my-career__nav__scrollbar',
+  },
+})
