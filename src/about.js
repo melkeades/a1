@@ -9,6 +9,7 @@ import Swiper, {
   EffectFade,
   Autoplay,
   Scrollbar,
+  FreeMode,
 } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/grid'
@@ -22,13 +23,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 Swiper.use([
   Navigation,
-  // Pagination,
-  // Grid,
-  // Thumbs,
-  // Controller,
-  // EffectFade,
-  // Autoplay,
+  Pagination,
+  Grid,
+  Thumbs,
+  Controller,
+  EffectFade,
+  Autoplay,
   Scrollbar,
+  FreeMode,
 ])
 
 const imgsToScroll = gsap.utils.toArray('.text-img__img')
@@ -114,3 +116,33 @@ const careerSlider = new Swiper('.my-career__swiper', {
     dragClass: 'my-career__nav__scrollbar',
   },
 })
+
+// let blogSlider
+// const blogSliderInit = () => {
+//   blogSlider = new Swiper('.blog__swiper', {
+//     speed: 600,
+//     spaceBetween: 40,
+//     slidesPerView: 1,
+//     slidesPerGroup: 1,
+//     pagination: {
+//       el: '.swiper-pagination',
+//     },
+//     navigation: {
+//       nextEl: '.blog__rightarrow',
+//       prevEl: '.blog__leftarrow',
+//     },
+//   })
+// }
+// if (window.innerWidth <= 767) {
+//   blogSliderInit()
+// }
+// const blogMq = window.matchMedia('(max-width: 767px)')
+// blogMq.onchange = (e) => {
+//   if (e.matches) {
+//     // 767 or less
+//     blogSliderInit()
+//   } else {
+//     // more than 767
+//     blogSlider.destroy()
+//   }
+// }
