@@ -24,6 +24,8 @@ import 'swiper/css/autoplay'
 import 'swiper/css/pagination'
 import './about'
 
+const select = (element) => document.querySelector(element)
+
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
@@ -53,6 +55,25 @@ Swiper.use([
   EffectFade,
   Autoplay,
 ])
+
+// const hero = select('.hero__video').replaceChildren()
+
+const navbar = select('.navbar-wrap')
+const navbarStickyClass = 'navbar-wrap--sticky'
+
+ScrollTrigger.create({
+  trigger: '.hero',
+  start: 'bottom top',
+  end: 'bottom 40%',
+  onEnter: () => {
+    // console.log('s')
+    navbar.classList.add(navbarStickyClass)
+  },
+  onEnterBack: () => {
+    // console.log('e')
+    navbar.classList.remove(navbarStickyClass)
+  },
+})
 
 let howSlider
 const howSliderInit = () => {
@@ -209,7 +230,6 @@ testLogos.forEach((logo) => {
   })
 })
 
-const updateTestLogo = () => {}
 const howMq = window.matchMedia('(max-width: 767px)')
 const mql = window.matchMedia('(max-width: 640px)')
 
@@ -225,7 +245,7 @@ howMq.onchange = (e) => {
 mql.onchange = () => {
   slide1.update()
 }
-console.log('xloaded test')
+console.log('loaded test')
 
 // faq -------------------------------------------
 $('.accordion__title').on('click', function () {
