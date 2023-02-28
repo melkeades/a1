@@ -50,8 +50,11 @@ html.w-editor::after
   grid-column-gap 0 !important
   grid-row-gap 0 !important
 
-.why-wrap2
-  filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.05))
+.consultaion__color-bg__img-bg
+  filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.1))
+
+.why__card
+  background-color white
 
 .how__swiper
   margin 0 !important
@@ -66,7 +69,7 @@ html.w-editor::after
 .leftarrow, .rightarrow
   cursor pointer
 
-.consultation__content__img
+.consultation__color-bg__img-bg
   filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
 
 .how__container, .blog__container
@@ -131,6 +134,9 @@ html.w-editor::after
     transform translate(-50%, -50%) scale(0.7)
 
 @media screen and (max-width 768px)
+  .navbar__menu__link
+    color white !important
+
   .hero__info__title-mark::before
     transform translate(-50%, -50%) scale(0.5)
 
@@ -146,7 +152,7 @@ html.w-editor::after
     overflow hidden
 
 @media only screen and (max-width 640px)
-  .consultation__content__img
+  .consultaion__img__color-bg
     filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
 
   .how__swiper

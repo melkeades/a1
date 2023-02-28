@@ -56,7 +56,10 @@ Swiper.use([
   Autoplay,
 ])
 
-// const hero = select('.hero__video').replaceChildren()
+const hero = select('.hero__video')
+if (hero) {
+  // hero.replaceChildren()
+}
 
 const navbar = select('.navbar-wrap')
 const navbarStickyClass = 'navbar-wrap--sticky'
