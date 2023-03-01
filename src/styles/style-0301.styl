@@ -63,6 +63,12 @@ html.w-editor::after
   margin 0 !important
   // width 100% !important
 
+.why__swiper
+  // margin 0 !important
+  // overflow visible !important
+  // width 960px
+  // height 280px
+
 .leftarrow, .rightarrow
   cursor pointer
 
@@ -126,37 +132,6 @@ html.w-editor::after
   // width 100%
   // overflow hidden
 
-// .why__bullets
-// display flex
-// gap 10px
-// justify-content center
-
-// .pagination__bullet
-// display block
-// width 10px
-// height 10px
-// background black
-// border-radius 10px
-// transition all 0.4s ease-out
-
-// .pagination__bullet--active
-// background #FB9700
-// transition all 0.4s ease-out
-@media screen and (min-width 769px)
-  .why__swiper
-    // margin 0 !important
-
-    // overflow visible !important
-
-    // width 960px
-    // height 280px
-    .swiper-wrapper
-      display grid
-      grid-row-gap 30px !important
-
-  .why__bullets
-    display none
-
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
     transform translate(-50%, -50%) scale(0.7)
@@ -171,17 +146,6 @@ html.w-editor::after
   .how__container .swiper-wrapper
     display flex
     align-items start
-
-  .why__swiper
-    height 400px
-
-    // padding 5px !important
-    .swiper-wrapper
-      display flex
-      flex-wrap wrap
-
-    .swiper-slide
-      height calc(((100% - 40px) / 2)) !important
 
   .results__img
     width auto
@@ -198,7 +162,18 @@ html.w-editor::after
     overflow hidden !important
     // width 400px !important
 
+  .why__swiper
+    overflow hidden !important
+    width calc(100% - 60px)
+    height 600px
+
+  .why__swiper-slide
+    height calc(((100% - 40px) / 2)) !important
+
 @media only screen and (max-width 480px)
+  .why__swiper
+    height 400px
+
   .why__logos
     height 60px
     width 100%

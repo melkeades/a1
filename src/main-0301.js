@@ -96,42 +96,46 @@ const howSliderInit = () => {
     },
   })
 }
-let whySlider
-const whySliderInit = () => {
-  whySlider = new Swiper('.why__swiper', {
-    speed: 600,
-    spaceBetween: 30,
-    slidesPerView: 1, // columns
-    slidesPerGroup: 2, // columns per swipe
-    grid: {
-      rows: 2,
-    },
-    breakpoints: {
-      240: {
-        pagination: {
-          el: '.why__bullets',
-          bulletActiveClass: 'pagination__bullet--active',
-          bulletClass: 'pagination__bullet',
-        },
-      },
-      768: {
-        pagination: {
-          enabled: false,
-        },
-      },
-    },
-
-    // navigation: {
-    //   nextEl: '.why__rightarrow',
-    //   prevEl: '.why__leftarrow',
-    // },
-  })
-}
-
 if (window.innerWidth <= 767) {
   howSliderInit()
-  whySliderInit()
 }
+const slide1 = new Swiper('.why__swiper', {
+  speed: 600,
+  spaceBetween: 30,
+  // observer: true,
+  // observeParents: true,
+  // slidesPerView: 3, // columns per row
+
+  navigation: {
+    nextEl: '.why__rightarrow',
+    prevEl: '.why__leftarrow',
+  },
+
+  breakpoints: {
+    // 240 and up
+    240: {
+      spaceBetween: 15,
+      slidesPerView: 2,
+      slidesPerGroup: 2, // columns per swipe
+      grid: {
+        rows: 2,
+      },
+    },
+    640: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      grid: {
+        rows: 1,
+      },
+      // spaceBetween: 0,
+    },
+    // 900: {
+    //   slidesPerView: 3,
+    //   slidesPerGroup: 3,
+    // },
+  },
+})
+
 const resultsLogos = new Swiper('.why__logos', {
   speed: 600,
   breakpoints: {
@@ -230,17 +234,19 @@ testLogos.forEach((logo) => {
 })
 
 const howMq = window.matchMedia('(max-width: 767px)')
+const mql = window.matchMedia('(max-width: 640px)')
 
 howMq.onchange = (e) => {
   if (e.matches) {
     // 767 or less
     howSliderInit()
-    whySliderInit()
   } else {
     // more than 767
     howSlider.destroy()
-    whySlider.destroy()
   }
+}
+mql.onchange = () => {
+  slide1.update()
 }
 console.log('loaded test')
 
