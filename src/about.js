@@ -137,8 +137,32 @@ const blogSlider = new Swiper('.blog__swiper', {
     768: {
       spaceBetween: 40,
       slidesPerView: 2,
-      // slidesPerView: 'auto',
-      // slidesPerGroup: 3, // columns per swipe
+      slidesPerGroup: 2, // columns per swipe
+    },
+  },
+})
+const whitePaperSlider = new Swiper('.white-paper__swiper', {
+  speed: 600,
+  // slidesPerGroup: 1,
+  pagination: {
+    el: '.blog__pagination',
+    bulletActiveClass: 'blog__pagination__bullet--active',
+    bulletClass: 'blog__pagination__bullet',
+  },
+  navigation: {
+    nextEl: '.white-paper__rightarrow',
+    prevEl: '.white-paper__leftarrow',
+  },
+  breakpoints: {
+    240: {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      // slidesPerGroup: 1, // columns per swipe
+    },
+    768: {
+      spaceBetween: 40,
+      slidesPerView: 3,
+      slidesPerGroup: 3, // columns per swipe
     },
   },
 })
