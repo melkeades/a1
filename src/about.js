@@ -81,33 +81,18 @@ const careerSlider = new Swiper('.my-career__swiper', {
     dragClass: 'my-career__nav__scrollbar',
   },
 })
-// const blogSlider = new Swiper('.blog__swiper', {
-//   // speed: 600,
-//   // spaceBetween: 0,
-//   // slidesPerView: 'auto',
-//   // freeMode: true,
-//   // navigation: {
-//   //   nextEl: '.my-career__rightarrow',
-//   //   prevEl: '.my-career__leftarrow',
-//   // },
-//   // scrollbar: {
-//   //   el: '.my-career__nav',
-//   //   draggable: true,
-//   //   snapOnRelease: false,
-//   //   dragClass: 'my-career__nav__scrollbar',
-//   // },
-// })
-let blogSlider
-const blogSliderInit = () => {
-  blogSlider = new Swiper('.blog__swiper', {
+
+let aboutBlogSlider
+const aboutBlogSliderInit = () => {
+  aboutBlogSlider = new Swiper('.about__blog__swiper', {
     speed: 600,
     spaceBetween: 40,
     slidesPerView: 1,
     slidesPerGroup: 1,
     pagination: {
-      el: '.swiper-pagination',
-      // bulletActiveClass: '.how__pagination__bullet--active',
-      // bulletClass: '.how__pagination__bullet',
+      el: '.blog__pagination',
+      bulletActiveClass: 'blog__pagination__bullet--active',
+      bulletClass: 'blog__pagination__bullet',
     },
     navigation: {
       nextEl: '.blog__rightarrow',
@@ -117,16 +102,43 @@ const blogSliderInit = () => {
 }
 
 if (window.innerWidth <= 767) {
-  blogSliderInit()
+  aboutBlogSliderInit()
 }
 const blogMq = window.matchMedia('(max-width: 767px)')
 
 blogMq.onchange = (e) => {
   if (e.matches) {
     // 767 or less
-    blogSliderInit()
+    aboutBlogSliderInit()
   } else {
     // more than 767
-    blogSliderInit()
+    aboutBlogSliderInit()
   }
 }
+
+const blogSlider = new Swiper('.blog__swiper', {
+  speed: 600,
+  // slidesPerGroup: 1,
+  pagination: {
+    el: '.blog__pagination',
+    bulletActiveClass: 'blog__pagination__bullet--active',
+    bulletClass: 'blog__pagination__bullet',
+  },
+  navigation: {
+    nextEl: '.blog__rightarrow',
+    prevEl: '.blog__leftarrow',
+  },
+  breakpoints: {
+    240: {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      // slidesPerGroup: 1, // columns per swipe
+    },
+    768: {
+      spaceBetween: 40,
+      slidesPerView: 2,
+      // slidesPerView: 'auto',
+      // slidesPerGroup: 3, // columns per swipe
+    },
+  },
+})
