@@ -129,22 +129,27 @@ html.w-editor::after
   // width 100%
   // overflow hidden
 
-// .why__bullets
-// display flex
-// gap 10px
-// justify-content center
+.webinars__title__swiper
+  // .swiper-wrapper
+  // display flex
+  // gap 60px !important
+  .webinars__title
+    transition all 0.4s
 
-// .pagination__bullet
-// display block
-// width 10px
-// height 10px
-// background black
-// border-radius 10px
-// transition all 0.4s ease-out
+  .swiper-slide
+    cursor pointer
 
-// .pagination__bullet--active
-// background #FB9700
-// transition all 0.4s ease-out
+  .swiper-slide:hover
+    .webinars__title
+      color #fb9700
+      transition all 0.4s
+
+  .swiper-slide-thumb-active
+    cursor default
+
+    .webinars__title
+      color #fb9700
+
 @media screen and (min-width 769px)
   .why__swiper
     // margin 0 !important
@@ -159,19 +164,6 @@ html.w-editor::after
 
   .why__bullets
     display none
-
-  .webinars__title__swiper
-    // .swiper-wrapper
-    // display flex
-    // gap 60px !important
-    .swiper-slide
-      cursor pointer
-
-    .swiper-slide-thumb-active
-      cursor default
-
-      .webinars__title
-        color #fb9700
 
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
@@ -205,6 +197,10 @@ html.w-editor::after
 
   .results__img-wrap
     overflow hidden
+
+  .webinars__title_swiper
+    .swiper-slide
+      // width 120px !important
 
 @media only screen and (max-width 640px)
   .consultaion__img__color-bg

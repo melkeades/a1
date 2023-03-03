@@ -174,27 +174,30 @@ const whitePaperSlider = new Swiper('.white-paper__swiper', {
 
 const webinarTitleSlider = new Swiper('.webinars__title__swiper', {
   speed: 600,
-  direction: 'vertical',
-  slidesPerView: 5,
+  // direction: 'vertical',
+  // slidesPerView: 5,
   // slidesPerGroup: 1,
-  // 240: {
-  //   spaceBetween: 20,
-  //   slidesPerView: 2,
-  //   // slidesPerGroup: 1, // columns per swipe
-  // },
-  // 768: {
-  //   spaceBetween: 40,
-  //   slidesPerView: 1,
-  //   slidesPerGroup: 1, // columns per swipe
-  //   enabled: false,
-  // },
-  // 992: {
-  //   spaceBetween: 40,
-  //   slidesPerView: 6,
-  //   slidesPerGroup: 6, // columns per swipe
-  // },
+  breakpoints: {
+    240: {
+      direction: 'horizontal',
+      spaceBetween: 20,
+      slidesPerView: 3,
+      slidesPerGroup: 3, // columns per swipe
+    },
+    768: {
+      direction: 'vertical',
+      slidesPerView: 5,
+    },
+  },
+  autoplay: {
+    delay: 5000,
+  },
 })
 const webinarItemSlider = new Swiper('.webinars__item__swiper', {
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true,
+  },
   speed: 600,
   slidesPerGroup: 1,
   spaceBetween: 20,
@@ -204,3 +207,4 @@ const webinarItemSlider = new Swiper('.webinars__item__swiper', {
 })
 
 webinarItemSlider.controller.control = webinarTitleSlider
+// webinarTitleSlider.controller.control = webinarItemSlider
