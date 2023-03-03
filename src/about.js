@@ -144,11 +144,6 @@ const blogSlider = new Swiper('.blog__swiper', {
 const whitePaperSlider = new Swiper('.white-paper__swiper', {
   speed: 600,
   // slidesPerGroup: 1,
-  pagination: {
-    el: '.blog__pagination',
-    bulletActiveClass: 'blog__pagination__bullet--active',
-    bulletClass: 'blog__pagination__bullet',
-  },
   navigation: {
     nextEl: '.white-paper__rightarrow',
     prevEl: '.white-paper__leftarrow',
@@ -189,9 +184,6 @@ const webinarTitleSlider = new Swiper('.webinars__title__swiper', {
       slidesPerView: 5,
     },
   },
-  autoplay: {
-    delay: 5000,
-  },
 })
 const webinarItemSlider = new Swiper('.webinars__item__swiper', {
   effect: 'fade',
@@ -203,6 +195,9 @@ const webinarItemSlider = new Swiper('.webinars__item__swiper', {
   spaceBetween: 20,
   thumbs: {
     swiper: webinarTitleSlider,
+  },
+  autoplay: {
+    delay: 5000,
   },
 })
 

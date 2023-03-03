@@ -255,6 +255,43 @@ html.w-editor::after
   color #FB9700 !important
 
 // RESOURCES -----------------------
+.hero__blog__item-wrap:hover
+  cursor pointer
+  transition all 0.5s
+
+  .hero__blog__title
+    // text-decoration underline
+    color #fb9700
+
+  .btn--resources
+    border-color #fb9700 !important
+    color #fb9700 !important
+
 .white-paper__swiper
   overflow hidden
   filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.05))
+
+.link--card:hover
+  .card--white-paper__hover
+    opacity 1
+
+  .pdf-img
+    // top -10px
+    transform translate(-50%, -70%)
+    transition all 0.4s
+    filter drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.1))
+
+  .white-paper__title
+    text-decoration underline
+    text-decoration-color #fb9700
+
+.pdf-img
+  transition all 0.4s
+
+// CONTACT ----------------------------------------------------------------
+.contact__link
+  text-decoration-color #FB9700
+
+// FAQ ----------------------------------------------------------------
+.faq .accordion__item:first-child
+  border-top-width 0
