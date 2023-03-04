@@ -176,6 +176,7 @@ const resultsImg = new Swiper('.results__img', {
     nextEl: '.results__rightarrow',
     prevEl: '.results__leftarrow',
   },
+
   autoplay: {
     delay: 5000,
   },

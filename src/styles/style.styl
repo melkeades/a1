@@ -272,6 +272,8 @@ html.w-editor::after
   filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.05))
 
 .link--card:hover
+  transition all 0.4s
+
   .card--white-paper__hover
     opacity 1
 
@@ -284,6 +286,12 @@ html.w-editor::after
   .white-paper__title
     text-decoration underline
     text-decoration-color #fb9700
+
+  .card--white-paper__img
+    background-size auto 110%
+    transition all 1.5s
+    // background-blend-mode luminosity
+    // backdrop-filter grayscale(100%)
 
 .pdf-img
   transition all 0.4s
