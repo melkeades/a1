@@ -205,3 +205,12 @@ webinarItemSlider.controller.control = webinarTitleSlider
 // webinarTitleSlider.controller.control = webinarItemSlider
 
 // BLOG ITEM ------------------
+const blogItemLinks = document.querySelectorAll('.blog-item__text a')
+blogItemLinks.forEach((link) => {
+  const textContent = link.textContent
+  link.setAttribute('data-link-dub', textContent)
+  link.innerHTML = `<span>${textContent}</span>`
+  link.addEventListener('click', (e) => {
+    e.currentTarget.classList.add('a--animated')
+  })
+})

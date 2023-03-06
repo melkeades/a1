@@ -215,6 +215,11 @@ html.w-editor::after
     // width 400px !important
 
 @media only screen and (max-width 480px)
+  .hero__video
+    video
+      width auto
+      left 0
+
   .why__logos
     height 60px
     width 100%
@@ -302,7 +307,7 @@ html.w-editor::after
 
 // CONTACT ----------------------------------------------------------------
 .contact__link
-  text-decoration-color #FB9700
+  text-decoration-color var(--orange)
 
 // FAQ ----------------------------------------------------------------
 .faq .accordion__item:first-child
@@ -313,26 +318,22 @@ html.w-editor::after
   a
     display inline
     text-decoration underline
-    text-decoration-color #FB9700
+    text-decoration-color #fb9700ff
+    text-decoration-thickness 2px
     text-underline-offset 0.4em
     color black
     font-weight 600
-    position relative
-    z-index 10
-    transition all 0.4s var(--ease-out-expo) 0.5s
-    overflow hidden
-    // background-color #33333333
+    transition all 0.5s var(--ease-out-expo)
+    // transition all 0.4s var(--ease-out-expo) 0.5s
 
   a:hover
-    text-decoration none
-    transition-delay 0s
-
-  .a--animated
-    text-decoration none
-
-    span
-      transform translateY(-100%)
-      transition all 2s var(--ease-out-expo)
+    text-decoration-color #fb970000
+    // text-decoration-thickness 6px
+    color #6c0b00
+    // text-underline-offset 0.6em
+    // text-decoration-color rgba(30, 30, 30, 0.1)
+    // text-decoration none
+    // transition-delay 0s
 
 .blog-item__share::before
   display none
