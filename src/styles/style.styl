@@ -1,0 +1,368 @@
+// .swiper-pagination-bullets.swiper-pagination-horizontal
+// width auto
+:root
+  --orange #fb9700
+  --ease-out-expo cubic-bezier(0.16, 1, 0.3, 1)
+
+html.lenis
+  height auto
+
+.leftarrow, .rightarrow, .btn, .navbar, .link
+  user-select none
+
+.w-nav
+  z-index 200
+
+.navbar-wrap--sticky
+  .navbar__logo
+    color black
+
+  .navbar__menu__link
+    color black
+
+  .navbar__btn
+    display flex
+    padding-bottom 4px
+
+.accordion__text
+  display none
+
+.hero__info__title
+  z-index 20
+
+.hero__info__titleMark
+  z-index 20
+
+.hero__info__title-mark::before
+  content url('https:\/\/uploads-ssl.webflow.com\/63eaa604a8a840ce06c9aa6d\/63eb9be563b7cf6636cf97b2_Vectors-Wrapper.svg')
+  position absolute
+  top 60%
+  left 60%
+  transform translate(-50%, -50%)
+  z-index -1
+
+.what__left::before
+  content ''
+  display block
+  width 240px
+  height 100%
+  background #FB9700
+  position absolute
+  top 0
+  left 0
+  transform translateX(-100%)
+
+html.w-editor::after
+  display none !important
+
+// swiper-------------------
+.swiper-wrapper
+  grid-column-gap 0 !important
+  grid-row-gap 0 !important
+
+.consultaion__color-bg__img-bg
+  filter drop-shadow(-50px 50px 30px rgba(0, 0, 0, 0.1))
+
+.why__card
+  background-color white
+
+.how__swiper, .blog__swiper, .about__blog__swiper
+  margin 0 !important
+  // width 100% !important
+
+.leftarrow, .rightarrow
+  cursor pointer
+
+.consultation__color-bg__img-bg
+  filter drop-shadow(-200px 200px 200px rgba(0, 0, 0, 0.5))
+
+.how__container, .blog__container, .about__blog__container
+  --swiper-theme-color #fb9700
+  --swiper-pagination-bullet-size 10px
+  --swiper-pagination-bullet-inactive-color white
+  --swiper-pagination-bullet-inactive-opacity 1
+  --swiper-pagination-bullet-horizontal-gap 10px
+
+.results__img
+  margin 0 !important
+
+.how__container .swiper-wrapper, .about__blog__container .swiper-wrapper
+  display block
+
+.results__img
+  margin 0 !important
+
+.results__logos__slide
+  width auto !important
+
+.why__logos
+  width 100%
+  height 80px
+  overflow visible !important
+
+  .swiper-slide-thumb-active
+    // background #000
+    filter none
+    opacity 1
+    transition-duration 0.5s
+    transition-property filter, opacity
+
+  .logos__item
+    // height auto !important
+    width auto
+    // max-height 100%
+    height 100% !important
+    max-width 110px
+    // max-height 70px
+    object-fit contain
+
+  .results__logos__slide
+    cursor pointer
+    display flex
+    align-items center
+    // background #999
+    // height 100% !important
+
+.my-career__swiper
+  overflow visible !important
+
+.my-career__swiper-slide
+  width auto !important
+
+.results
+  // width 100%
+  // overflow hidden
+
+.webinars__title__swiper
+  // .swiper-wrapper
+  // display flex
+  // gap 60px !important
+  .webinars__title
+    transition all 0.4s
+
+  .swiper-slide
+    cursor pointer
+
+  .swiper-slide:hover
+    .webinars__title
+      color #fb9700
+      transition all 0.4s
+
+  .swiper-slide-thumb-active
+    cursor default
+
+    .webinars__title
+      color #fb9700
+
+@media screen and (min-width 769px)
+  .why__swiper
+    // margin 0 !important
+
+    // overflow visible !important
+
+    // width 960px
+    // height 280px
+    .swiper-wrapper
+      display grid
+      grid-row-gap 30px !important
+
+  .why__bullets
+    display none
+
+@media screen and (max-width 991px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.7)
+
+@media screen and (max-width 768px)
+  .navbar__menu__link
+    color white !important
+
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.5)
+
+  .how__container .swiper-wrapper, .blog__container .swiper-wrapper, .about__blog__container .swiper-wrapper
+    display flex
+    align-items start
+
+  .why__swiper
+    height 400px
+
+    // padding 5px !important
+    .swiper-wrapper
+      display flex
+      flex-wrap wrap
+
+    .swiper-slide
+      height calc(((100% - 40px) / 2)) !important
+
+  .results__img
+    width auto
+    height auto !important
+
+  .results__img-wrap
+    overflow hidden
+
+  .webinars__title_swiper
+    .swiper-slide
+      // width 120px !important
+
+@media only screen and (max-width 640px)
+  .consultaion__img__color-bg
+    filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.9))
+
+  .how__swiper, .blog__swiper, .about__blog__swiper
+    overflow hidden !important
+    // width 400px !important
+
+@media only screen and (max-width 480px)
+  .hero__video
+    video
+      width auto
+      left 0
+
+  .why__logos
+    height 60px
+    width 100%
+    overflow visible !important
+
+    .logos__item
+      height auto
+      // width auto
+      // max-height 80px
+      max-width 120px
+      // width 120px
+      // height auto
+
+  .testimonials__item__logos
+    justify-content space-evenly
+
+  .testimonials__logo
+    display flex
+    justify-content center
+
+    svg
+      max-height 60px
+      max-width 80px
+
+.swiper-pagination
+  position relative !important
+
+// var(--swiper-pagination-bullet-inactive-color, #fff) !important
+.how__titleNav__arrows
+  z-index 100 !important
+
+.text-img__img--career
+  clip-path url('#maskCareer')
+
+.text-img__img--success
+  clip-path url('#maskSuccess')
+
+.text-img__img--life
+  clip-path url('#maskLife')
+
+.w--current
+  color #FB9700 !important
+
+// RESOURCES -----------------------
+.hero__blog__item-wrap:hover
+  cursor pointer
+  transition all 0.5s
+
+  .hero__blog__title
+    // text-decoration underline
+    color #fb9700
+
+  .btn--resources
+    border-color #fb9700 !important
+    color #fb9700 !important
+
+.white-paper__swiper
+  overflow hidden
+  filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.05))
+
+.link--card:hover
+  transition all 0.4s
+
+  .card--white-paper__hover
+    opacity 1
+
+  .pdf-img
+    // top -10px
+    transform translate(-50%, -70%)
+    transition all 0.4s
+    filter drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.1))
+
+  .white-paper__title
+    text-decoration underline
+    text-decoration-color #fb9700
+
+  .card--white-paper__img
+    background-size auto 110%
+    transition all 1.5s
+    // background-blend-mode luminosity
+    // backdrop-filter grayscale(100%)
+
+.pdf-img
+  transition all 0.4s
+
+// CONTACT ----------------------------------------------------------------
+.contact__link
+  text-decoration-color var(--orange)
+
+// FAQ ----------------------------------------------------------------
+.faq .accordion__item:first-child
+  border-top-width 0
+
+// BLOG ITEM --------
+.blog-item__text
+  a
+    display inline
+    text-decoration underline
+    text-decoration-color #fb9700ff
+    text-decoration-thickness 2px
+    text-underline-offset 0.4em
+    color black
+    font-weight 600
+    transition all 0.5s var(--ease-out-expo)
+    // transition all 0.4s var(--ease-out-expo) 0.5s
+
+  a:hover
+    text-decoration-color #fb970000
+    // text-decoration-thickness 6px
+    color #6c0b00
+    // text-underline-offset 0.6em
+    // text-decoration-color rgba(30, 30, 30, 0.1)
+    // text-decoration none
+    // transition-delay 0s
+
+.blog-item__share::before
+  display none
+
+.share__link
+  overflow hidden
+  transition all 1s var(--ease-out-expo)
+
+  &:hover
+    // codepen.io/melkeades/pen/ExeXMoJ:
+    filter invert(63%) sepia(88%) saturate(2327%) hue-rotate(1deg) brightness(101%) contrast(103%)
+
+    .svg, &::after
+      transform translateY(-110%)
+      transition inherit
+
+.share__link--facebook::after, .share__link--twitter::after, .share__link--linkedin::after
+  display block
+  position absolute
+  bottom -110%
+  left 0
+  width 100%
+  height 100%
+
+.share__link--facebook::after
+  content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwIDAuMDM5MDYyNUM0LjUgMC4wMzkwNjI1IDAgNC41MjkwNiAwIDEwLjA1OTFDMCAxNS4wNTkxIDMuNjYgMTkuMjA5MSA4LjQ0IDE5Ljk1OTFWMTIuOTU5MUg1LjlWMTAuMDU5MUg4LjQ0VjcuODQ5MDZDOC40NCA1LjMzOTA2IDkuOTMgMy45NTkwNiAxMi4yMiAzLjk1OTA2QzEzLjMxIDMuOTU5MDYgMTQuNDUgNC4xNDkwNiAxNC40NSA0LjE0OTA2VjYuNjE5MDZIMTMuMTlDMTEuOTUgNi42MTkwNiAxMS41NiA3LjM4OTA2IDExLjU2IDguMTc5MDZWMTAuMDU5MUgxNC4zNEwxMy44OSAxMi45NTkxSDExLjU2VjE5Ljk1OTFDMTMuOTE2NCAxOS41ODY5IDE2LjA2MjIgMTguMzg0NiAxNy42MDk5IDE2LjU2OTFDMTkuMTU3NiAxNC43NTM3IDIwLjAwNTMgMTIuNDQ0NyAyMCAxMC4wNTkxQzIwIDQuNTI5MDYgMTUuNSAwLjAzOTA2MjUgMTAgMC4wMzkwNjI1WiIgZmlsbD0iY3VycmVudENvbG9yIi8+Cjwvc3ZnPg==')
+
+.share__link--twitter::after
+  content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjIiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAyMiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIxLjQ1OTEgMkMyMC42ODkxIDIuMzUgMTkuODU5MSAyLjU4IDE4Ljk5OTEgMi42OUMxOS44NzkxIDIuMTYgMjAuNTU5MSAxLjMyIDIwLjg3OTEgMC4zMUMyMC4wNDkxIDAuODEgMTkuMTI5MSAxLjE2IDE4LjE1OTEgMS4zNkMxNy4zNjkxIDAuNSAxNi4yNTkxIDAgMTQuOTk5MSAwQzEyLjY0OTEgMCAxMC43MjkxIDEuOTIgMTAuNzI5MSA0LjI5QzEwLjcyOTEgNC42MyAxMC43NjkxIDQuOTYgMTAuODM5MSA1LjI3QzcuMjc5MDYgNS4wOSA0LjEwOTA2IDMuMzggMS45OTkwNiAwLjc5QzEuNjI5MDYgMS40MiAxLjQxOTA2IDIuMTYgMS40MTkwNiAyLjk0QzEuNDE5MDYgNC40MyAyLjE2OTA2IDUuNzUgMy4zMjkwNiA2LjVDMi42MTkwNiA2LjUgMS45NTkwNiA2LjMgMS4zNzkwNiA2QzEuMzc5MDYgNiAxLjM3OTA2IDYgMS4zNzkwNiA2LjAzQzEuMzc5MDYgOC4xMSAyLjg1OTA2IDkuODUgNC44MTkwNiAxMC4yNEM0LjQ1OTA2IDEwLjM0IDQuMDc5MDYgMTAuMzkgMy42ODkwNiAxMC4zOUMzLjQxOTA2IDEwLjM5IDMuMTQ5MDYgMTAuMzYgMi44ODkwNiAxMC4zMUMzLjQyOTA2IDEyIDQuOTk5MDYgMTMuMjYgNi44ODkwNiAxMy4yOUM1LjQyOTA2IDE0LjQ1IDMuNTc5MDYgMTUuMTMgMS41NTkwNiAxNS4xM0MxLjIxOTA2IDE1LjEzIDAuODc5MDYzIDE1LjExIDAuNTM5MDYyIDE1LjA3QzIuNDM5MDYgMTYuMjkgNC42OTkwNiAxNyA3LjExOTA2IDE3QzE0Ljk5OTEgMTcgMTkuMzI5MSAxMC40NiAxOS4zMjkxIDQuNzlDMTkuMzI5MSA0LjYgMTkuMzI5MSA0LjQyIDE5LjMxOTEgNC4yM0MyMC4xNTkxIDMuNjMgMjAuODc5MSAyLjg3IDIxLjQ1OTEgMloiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4=')
+
+.share__link--linkedin::after
+  content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDMTYuNTMwNCAwIDE3LjAzOTEgMC4yMTA3MTQgMTcuNDE0MiAwLjU4NTc4NkMxNy43ODkzIDAuOTYwODU5IDE4IDEuNDY5NTcgMTggMlYxNkMxOCAxNi41MzA0IDE3Ljc4OTMgMTcuMDM5MSAxNy40MTQyIDE3LjQxNDJDMTcuMDM5MSAxNy43ODkzIDE2LjUzMDQgMTggMTYgMThIMkMxLjQ2OTU3IDE4IDAuOTYwODU5IDE3Ljc4OTMgMC41ODU3ODYgMTcuNDE0MkMwLjIxMDcxNCAxNy4wMzkxIDAgMTYuNTMwNCAwIDE2VjJDMCAxLjQ2OTU3IDAuMjEwNzE0IDAuOTYwODU5IDAuNTg1Nzg2IDAuNTg1Nzg2QzAuOTYwODU5IDAuMjEwNzE0IDEuNDY5NTcgMCAyIDBIMTZaTTE1LjUgMTUuNVYxMC4yQzE1LjUgOS4zMzUzOSAxNS4xNTY1IDguNTA2MiAxNC41NDUyIDcuODk0ODNDMTMuOTMzOCA3LjI4MzQ2IDEzLjEwNDYgNi45NCAxMi4yNCA2Ljk0QzExLjM5IDYuOTQgMTAuNCA3LjQ2IDkuOTIgOC4yNFY3LjEzSDcuMTNWMTUuNUg5LjkyVjEwLjU3QzkuOTIgOS44IDEwLjU0IDkuMTcgMTEuMzEgOS4xN0MxMS42ODEzIDkuMTcgMTIuMDM3NCA5LjMxNzUgMTIuMjk5OSA5LjU4MDA1QzEyLjU2MjUgOS44NDI2IDEyLjcxIDEwLjE5ODcgMTIuNzEgMTAuNTdWMTUuNUgxNS41Wk0zLjg4IDUuNTZDNC4zMjU1NiA1LjU2IDQuNzUyODggNS4zODMgNS4wNjc5NCA1LjA2Nzk0QzUuMzgzIDQuNzUyODggNS41NiA0LjMyNTU2IDUuNTYgMy44OEM1LjU2IDIuOTUgNC44MSAyLjE5IDMuODggMi4xOUMzLjQzMTc4IDIuMTkgMy4wMDE5MyAyLjM2ODA1IDIuNjg0OTkgMi42ODQ5OUMyLjM2ODA1IDMuMDAxOTMgMi4xOSAzLjQzMTc4IDIuMTkgMy44OEMyLjE5IDQuODEgMi45NSA1LjU2IDMuODggNS41NlpNNS4yNyAxNS41VjcuMTNIMi41VjE1LjVINS4yN1oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4=')
