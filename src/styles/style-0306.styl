@@ -311,8 +311,9 @@ html.w-editor::after
 // BLOG ITEM --------
 .blog-item__text
   a
-    display inline
-    text-decoration underline
+    display inline-flex
+    // text-decoration underline
+    text-decoration none
     text-decoration-color #FB9700
     text-underline-offset 0.4em
     color black
@@ -321,17 +322,45 @@ html.w-editor::after
     z-index 10
     transition all 0.4s var(--ease-out-expo) 0.5s
     overflow hidden
-    // background-color #33333333
+
+  a::before
+    position absolute
+    display block
+    content ''
+    bottom 0.3em
+    left 0
+    width 100%
+    height 2px
+    background var(--orange)
+    transition inherit
+    // opacity 1
+    z-index -1 !important
+
+  a::after
+    position absolute
+    display block
+    content attr(data-link-dub)
+    bottom -110%
+    left 0
+    width 100%
 
   a:hover
     text-decoration none
     transition-delay 0s
+
+    &::before
+      opacity 0.5
+      height 1.7em
 
   .a--animated
     text-decoration none
 
     span
       transform translateY(-100%)
+      transition all 2s var(--ease-out-expo)
+
+    &::after
+      bottom 0%
       transition all 2s var(--ease-out-expo)
 
 .blog-item__share::before
