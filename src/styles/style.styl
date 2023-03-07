@@ -244,6 +244,10 @@ html.w-editor::after
       max-height 60px
       max-width 80px
 
+  // ABOUT ----------------------------------------------------------------
+  .my-career__info__year--big::before
+    transform translate(-50%, -50%) scale(0.6) !important
+
 .swiper-pagination
   position relative !important
 
@@ -263,13 +267,35 @@ html.w-editor::after
 .w--current
   color #FB9700 !important
 
-// RESOURCES -----------------------
+// ABOUT ----------------------------------------------------------------
+.my-career__swiper
+  .my-career__info__year--big::before
+    display block
+    position absolute
+    left 50%
+    top 50%
+    transform translate(-50%, -50%) scale(1)
+    z-index -1
+
+  --year-mark-1 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjE3NiIgdmlld0JveD0iMCAwIDQwMCAxNzYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yMzUuMDM4IDE1MS44OEMxMjguMDczIDE3Mi40MzEgMTQuMDkwNiAxNjguMjExIDYuMTA3MyAxMjYuNjZDLTEuODc1OTUgODUuMTA5NSA3OC4zNjQ2IDM0Ljc2NTYgMTg1LjMzIDE0LjIxNDJDMjkyLjI5NSAtNi4zMzcxNCAzODUuNDc5IDEwLjY4NjQgMzkzLjQ2MiA1Mi4yMzczQzQwMS4yMDggOTIuNTUyMyAzMjcuMzE2IDE0OC41MTQgMjI1LjEyOCAxNzAuMTQxIiBzdHJva2U9IiNGQjk3MDAiIHN0cm9rZS13aWR0aD0iMTAuOTcxOSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=')
+  --year-mark-2 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQ4IiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDM0OCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yMDUuNTI0IDguNTI3MTlDMTEzLjExMSAtMS40OTE2NyAxMS43MDI5IDIzLjUzOTIgNi43Mjc5IDc1LjIxMjhDMS43NTI5MSAxMjYuODg2IDczLjE2ODUgMTYxLjUwNyAxNjUuNTgyIDE3MS41MjZDMjU3Ljk5NSAxODEuNTQ1IDMzNS43NTUgMTYzLjQyOCAzNDEuMzg1IDExMS40OTRDMzQ3LjYwOCA1NC4wOTQ2IDI2NS4zMjggMTUuMzMxMyAxODcuOTQ3IDI2LjY2ODEiIHN0cm9rZT0iI0ZCOTcwMCIgc3Ryb2tlLXdpZHRoPSIxMC45NzE5IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==')
+  --year-mark-3 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzg3IiBoZWlnaHQ9IjIwMSIgdmlld0JveD0iMCAwIDM4NyAyMDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0yMDMuMzAzIDI0LjkxNzhDMTAwLjAyNCA0MC40ODU1IC0xLjAyNTM1IDg1LjEwMyA2LjExODg5IDEzMi40OTlDMTMuMjYzMSAxNzkuODk1IDEwMi43NzggMjA1LjY5NiAyMDYuMDU3IDE5MC4xMjlDMzA5LjMzNSAxNzQuNTYxIDM4Ny4yNjcgMTIzLjUxOSAzODAuMTIzIDc2LjEyM0MzNzMuMTkxIDMwLjEzNyAyODcuNDQ5IC0zLjkyNjU3IDE4OC4wOTYgOC44MDcxNSIgc3Ryb2tlPSIjRkI5NzAwIiBzdHJva2Utd2lkdGg9IjEwLjk3MTkiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K')
+
+  .my-career__info__year--mark1::before
+    content var(--year-mark-1)
+
+  .my-career__info__year--mark2::before
+    content var(--year-mark-2)
+
+  .my-career__info__year--mark3::before
+    content var(--year-mark-3)
+
 .hero__blog__item-wrap:hover
+  // RESOURCES -----------------------
   cursor pointer
   transition all 0.5s
 
   .hero__blog__title
-    // text-decoration underline
     color #fb9700
 
   .btn--resources
@@ -287,8 +313,8 @@ html.w-editor::after
     opacity 1
 
   .pdf-img
-    // top -10px
     transform translate(-50%, -70%)
+    // top -10px
     transition all 0.4s
     filter drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.1))
 
@@ -299,22 +325,20 @@ html.w-editor::after
   .card--white-paper__img
     background-size auto 110%
     transition all 1.5s
-    // background-blend-mode luminosity
-    // backdrop-filter grayscale(100%)
 
 .pdf-img
   transition all 0.4s
 
-// CONTACT ----------------------------------------------------------------
 .contact__link
+  // CONTACT ----------------------------------------------------------------
   text-decoration-color var(--orange)
 
-// FAQ ----------------------------------------------------------------
 .faq .accordion__item:first-child
+  // FAQ ----------------------------------------------------------------
   border-top-width 0
 
-// BLOG ITEM --------
 .blog-item__text, .webinar-item__text
+  // BLOG ITEM --------
   >*:first-child
     margin-top 0
     padding-top 0
@@ -328,16 +352,10 @@ html.w-editor::after
     color black
     font-weight 600
     transition all 0.5s var(--ease-out-expo)
-    // transition all 0.4s var(--ease-out-expo) 0.5s
 
   a:hover
     text-decoration-color #fb970000
-    // text-decoration-thickness 6px
     color #6c0b00
-    // text-underline-offset 0.6em
-    // text-decoration-color rgba(30, 30, 30, 0.1)
-    // text-decoration none
-    // transition-delay 0s
 
 .blog-item__share, .webinar-item__share
   &::before
@@ -348,7 +366,6 @@ html.w-editor::after
   transition all 1s var(--ease-out-expo)
 
   &:hover
-    // codepen.io/melkeades/pen/ExeXMoJ:
     filter invert(63%) sepia(88%) saturate(2327%) hue-rotate(1deg) brightness(101%) contrast(103%)
 
     .svg, &::after
@@ -372,6 +389,6 @@ html.w-editor::after
 .share__link--linkedin::after
   content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDMTYuNTMwNCAwIDE3LjAzOTEgMC4yMTA3MTQgMTcuNDE0MiAwLjU4NTc4NkMxNy43ODkzIDAuOTYwODU5IDE4IDEuNDY5NTcgMTggMlYxNkMxOCAxNi41MzA0IDE3Ljc4OTMgMTcuMDM5MSAxNy40MTQyIDE3LjQxNDJDMTcuMDM5MSAxNy43ODkzIDE2LjUzMDQgMTggMTYgMThIMkMxLjQ2OTU3IDE4IDAuOTYwODU5IDE3Ljc4OTMgMC41ODU3ODYgMTcuNDE0MkMwLjIxMDcxNCAxNy4wMzkxIDAgMTYuNTMwNCAwIDE2VjJDMCAxLjQ2OTU3IDAuMjEwNzE0IDAuOTYwODU5IDAuNTg1Nzg2IDAuNTg1Nzg2QzAuOTYwODU5IDAuMjEwNzE0IDEuNDY5NTcgMCAyIDBIMTZaTTE1LjUgMTUuNVYxMC4yQzE1LjUgOS4zMzUzOSAxNS4xNTY1IDguNTA2MiAxNC41NDUyIDcuODk0ODNDMTMuOTMzOCA3LjI4MzQ2IDEzLjEwNDYgNi45NCAxMi4yNCA2Ljk0QzExLjM5IDYuOTQgMTAuNCA3LjQ2IDkuOTIgOC4yNFY3LjEzSDcuMTNWMTUuNUg5LjkyVjEwLjU3QzkuOTIgOS44IDEwLjU0IDkuMTcgMTEuMzEgOS4xN0MxMS42ODEzIDkuMTcgMTIuMDM3NCA5LjMxNzUgMTIuMjk5OSA5LjU4MDA1QzEyLjU2MjUgOS44NDI2IDEyLjcxIDEwLjE5ODcgMTIuNzEgMTAuNTdWMTUuNUgxNS41Wk0zLjg4IDUuNTZDNC4zMjU1NiA1LjU2IDQuNzUyODggNS4zODMgNS4wNjc5NCA1LjA2Nzk0QzUuMzgzIDQuNzUyODggNS41NiA0LjMyNTU2IDUuNTYgMy44OEM1LjU2IDIuOTUgNC44MSAyLjE5IDMuODggMi4xOUMzLjQzMTc4IDIuMTkgMy4wMDE5MyAyLjM2ODA1IDIuNjg0OTkgMi42ODQ5OUMyLjM2ODA1IDMuMDAxOTMgMi4xOSAzLjQzMTc4IDIuMTkgMy44OEMyLjE5IDQuODEgMi45NSA1LjU2IDMuODggNS41NlpNNS4yNyAxNS41VjcuMTNIMi41VjE1LjVINS4yN1oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4=')
 
-// WEBINAR
 .webinar-video:hover > .play-btn
+  // WEBINAR
   background #1F1F1F
