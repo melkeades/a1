@@ -218,7 +218,7 @@ html.w-editor::after
   .hero__video
     video
       width auto
-      left 0
+      left -30%
 
   .why__logos
     height 60px
@@ -314,7 +314,11 @@ html.w-editor::after
   border-top-width 0
 
 // BLOG ITEM --------
-.blog-item__text
+.blog-item__text, .webinar-item__text
+  >*:first-child
+    margin-top 0
+    padding-top 0
+
   a
     display inline
     text-decoration underline
@@ -335,8 +339,9 @@ html.w-editor::after
     // text-decoration none
     // transition-delay 0s
 
-.blog-item__share::before
-  display none
+.blog-item__share, .webinar-item__share
+  &::before
+    display none
 
 .share__link
   overflow hidden
@@ -366,3 +371,7 @@ html.w-editor::after
 
 .share__link--linkedin::after
   content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDMTYuNTMwNCAwIDE3LjAzOTEgMC4yMTA3MTQgMTcuNDE0MiAwLjU4NTc4NkMxNy43ODkzIDAuOTYwODU5IDE4IDEuNDY5NTcgMTggMlYxNkMxOCAxNi41MzA0IDE3Ljc4OTMgMTcuMDM5MSAxNy40MTQyIDE3LjQxNDJDMTcuMDM5MSAxNy43ODkzIDE2LjUzMDQgMTggMTYgMThIMkMxLjQ2OTU3IDE4IDAuOTYwODU5IDE3Ljc4OTMgMC41ODU3ODYgMTcuNDE0MkMwLjIxMDcxNCAxNy4wMzkxIDAgMTYuNTMwNCAwIDE2VjJDMCAxLjQ2OTU3IDAuMjEwNzE0IDAuOTYwODU5IDAuNTg1Nzg2IDAuNTg1Nzg2QzAuOTYwODU5IDAuMjEwNzE0IDEuNDY5NTcgMCAyIDBIMTZaTTE1LjUgMTUuNVYxMC4yQzE1LjUgOS4zMzUzOSAxNS4xNTY1IDguNTA2MiAxNC41NDUyIDcuODk0ODNDMTMuOTMzOCA3LjI4MzQ2IDEzLjEwNDYgNi45NCAxMi4yNCA2Ljk0QzExLjM5IDYuOTQgMTAuNCA3LjQ2IDkuOTIgOC4yNFY3LjEzSDcuMTNWMTUuNUg5LjkyVjEwLjU3QzkuOTIgOS44IDEwLjU0IDkuMTcgMTEuMzEgOS4xN0MxMS42ODEzIDkuMTcgMTIuMDM3NCA5LjMxNzUgMTIuMjk5OSA5LjU4MDA1QzEyLjU2MjUgOS44NDI2IDEyLjcxIDEwLjE5ODcgMTIuNzEgMTAuNTdWMTUuNUgxNS41Wk0zLjg4IDUuNTZDNC4zMjU1NiA1LjU2IDQuNzUyODggNS4zODMgNS4wNjc5NCA1LjA2Nzk0QzUuMzgzIDQuNzUyODggNS41NiA0LjMyNTU2IDUuNTYgMy44OEM1LjU2IDIuOTUgNC44MSAyLjE5IDMuODggMi4xOUMzLjQzMTc4IDIuMTkgMy4wMDE5MyAyLjM2ODA1IDIuNjg0OTkgMi42ODQ5OUMyLjM2ODA1IDMuMDAxOTMgMi4xOSAzLjQzMTc4IDIuMTkgMy44OEMyLjE5IDQuODEgMi45NSA1LjU2IDMuODggNS41NlpNNS4yNyAxNS41VjcuMTNIMi41VjE1LjVINS4yN1oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4=')
+
+// WEBINAR
+.webinar-video:hover > .play-btn
+  background #1F1F1F
