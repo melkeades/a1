@@ -214,7 +214,7 @@ const testLogoActiveClass = testLogoClass + '--active'
 
 testQuote.controller.control = testName
 testQuote.on('slideChange', () => {
-  console.log('slide changed to' + testQuote.activeIndex)
+  // console.log('slide changed to' + testQuote.activeIndex)
   testLogos.forEach((f) => f.classList.remove(testLogoActiveClass))
   testLogos[testQuote.activeIndex].classList.toggle(testLogoActiveClass)
 })
@@ -259,3 +259,6 @@ $('.accordion__title').on('click', function () {
     $('html').animate({ scrollTop: $(this).offset().top - 180 }, 800)
   }, 400)
 })
+
+// form -------------------------------------------
+// select('.form-success__trigger').click()

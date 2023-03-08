@@ -244,14 +244,13 @@ html.w-editor::after
       max-height 60px
       max-width 80px
 
-  // ABOUT ----------------------------------------------------------------
+  // About ----------------------------------------------------------------
   .my-career__info__year--big::before
     transform translate(-50%, -50%) scale(0.6) !important
 
 .swiper-pagination
   position relative !important
 
-// var(--swiper-pagination-bullet-inactive-color, #fff) !important
 .how__titleNav__arrows
   z-index 100 !important
 
@@ -290,8 +289,8 @@ html.w-editor::after
   .my-career__info__year--mark3::before
     content var(--year-mark-3)
 
+// RESOURCES -----------------------
 .hero__blog__item-wrap:hover
-  // RESOURCES -----------------------
   cursor pointer
   transition all 0.5s
 
@@ -329,16 +328,41 @@ html.w-editor::after
 .pdf-img
   transition all 0.4s
 
+// CONTACT ----------------------------------------------------------------
 .contact__link
-  // CONTACT ----------------------------------------------------------------
   text-decoration-color var(--orange)
 
+// FAQ ----------------------------------------------------------------
 .faq .accordion__item:first-child
-  // FAQ ----------------------------------------------------------------
   border-top-width 0
 
+// BLOG ITEM --------
+.card--blog
+  .card__title
+    span
+      display inline !important
+      transition all 2s var(--ease-out-expo) !important
+      background linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(to right, rgba(251, 151, 0, 1), rgba(251, 151, 0, 1))
+      background-size 100% 0.1em, 0 0.1em
+      background-position 100% 100%, 0 100%
+      background-repeat no-repeat
+
+.card--blog:hover
+  .card__title
+    span
+      // text-decoration underline
+      background-size 0 0.1em, 100% 0.1em
+      transition all 2s var(--ease-out-expo)
+
+  .blog-card__text
+    opacity 0.8
+    transition inherit
+
+  .blog-card__img
+    transform scale(1.1)
+    transition all 2s var(--ease-out-expo)
+
 .blog-item__text, .webinar-item__text
-  // BLOG ITEM --------
   >*:first-child
     margin-top 0
     padding-top 0
@@ -356,6 +380,11 @@ html.w-editor::after
   a:hover
     text-decoration-color #fb970000
     color #6c0b00
+
+  figure:has(>div>img)
+    // opacity 0.5
+    max-width 100%
+    width 100%
 
 .blog-item__share, .webinar-item__share
   &::before
@@ -389,6 +418,6 @@ html.w-editor::after
 .share__link--linkedin::after
   content url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxOCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE2IDBDMTYuNTMwNCAwIDE3LjAzOTEgMC4yMTA3MTQgMTcuNDE0MiAwLjU4NTc4NkMxNy43ODkzIDAuOTYwODU5IDE4IDEuNDY5NTcgMTggMlYxNkMxOCAxNi41MzA0IDE3Ljc4OTMgMTcuMDM5MSAxNy40MTQyIDE3LjQxNDJDMTcuMDM5MSAxNy43ODkzIDE2LjUzMDQgMTggMTYgMThIMkMxLjQ2OTU3IDE4IDAuOTYwODU5IDE3Ljc4OTMgMC41ODU3ODYgMTcuNDE0MkMwLjIxMDcxNCAxNy4wMzkxIDAgMTYuNTMwNCAwIDE2VjJDMCAxLjQ2OTU3IDAuMjEwNzE0IDAuOTYwODU5IDAuNTg1Nzg2IDAuNTg1Nzg2QzAuOTYwODU5IDAuMjEwNzE0IDEuNDY5NTcgMCAyIDBIMTZaTTE1LjUgMTUuNVYxMC4yQzE1LjUgOS4zMzUzOSAxNS4xNTY1IDguNTA2MiAxNC41NDUyIDcuODk0ODNDMTMuOTMzOCA3LjI4MzQ2IDEzLjEwNDYgNi45NCAxMi4yNCA2Ljk0QzExLjM5IDYuOTQgMTAuNCA3LjQ2IDkuOTIgOC4yNFY3LjEzSDcuMTNWMTUuNUg5LjkyVjEwLjU3QzkuOTIgOS44IDEwLjU0IDkuMTcgMTEuMzEgOS4xN0MxMS42ODEzIDkuMTcgMTIuMDM3NCA5LjMxNzUgMTIuMjk5OSA5LjU4MDA1QzEyLjU2MjUgOS44NDI2IDEyLjcxIDEwLjE5ODcgMTIuNzEgMTAuNTdWMTUuNUgxNS41Wk0zLjg4IDUuNTZDNC4zMjU1NiA1LjU2IDQuNzUyODggNS4zODMgNS4wNjc5NCA1LjA2Nzk0QzUuMzgzIDQuNzUyODggNS41NiA0LjMyNTU2IDUuNTYgMy44OEM1LjU2IDIuOTUgNC44MSAyLjE5IDMuODggMi4xOUMzLjQzMTc4IDIuMTkgMy4wMDE5MyAyLjM2ODA1IDIuNjg0OTkgMi42ODQ5OUMyLjM2ODA1IDMuMDAxOTMgMi4xOSAzLjQzMTc4IDIuMTkgMy44OEMyLjE5IDQuODEgMi45NSA1LjU2IDMuODggNS41NlpNNS4yNyAxNS41VjcuMTNIMi41VjE1LjVINS4yN1oiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgo8L3N2Zz4=')
 
+// WEBINAR ---------
 .webinar-video:hover > .play-btn
-  // WEBINAR
   background #1F1F1F
