@@ -84,6 +84,7 @@ const careerSlider = new Swiper('.my-career__swiper', {
 
 let aboutBlogSlider
 const aboutBlogSliderInit = () => {
+  console.log('ini')
   aboutBlogSlider = new Swiper('.about__blog__swiper', {
     speed: 600,
     spaceBetween: 40,
@@ -112,9 +113,19 @@ blogMq.onchange = (e) => {
     aboutBlogSliderInit()
   } else {
     // more than 767
-    aboutBlogSliderInit()
+    aboutBlogSlider[0].destroy()
   }
 }
+
+// blogMq.onchange = (e) => {
+//   if (e.matches) {
+//     // 767 or less
+//     aboutBlogSliderInit()
+//   } else {
+//     // more than 767
+//     aboutBlogSlider.destroy()
+//   }
+// }
 
 const blogSlider = new Swiper('.blog__swiper', {
   speed: 600,
