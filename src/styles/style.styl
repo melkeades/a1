@@ -1,5 +1,18 @@
-// .swiper-pagination-bullets.swiper-pagination-horizontal
-// width auto
+a =
+  a
+    display inline
+    text-decoration underline
+    text-decoration-color #fb9700ff
+    text-decoration-thickness 2px
+    text-underline-offset 0.4em
+    color black
+    font-weight 600
+    transition all 0.5s var(--ease-out-expo)
+
+  a:hover
+    text-decoration-color #fb970000
+    color #6c0b00
+
 :root
   --orange #fb9700
   --ease-out-expo cubic-bezier(0.16, 1, 0.3, 1)
@@ -267,6 +280,9 @@ html.w-editor::after
   color #FB9700 !important
 
 // ABOUT ----------------------------------------------------------------
+.text-img__info .text
+  {a}
+
 .my-career__swiper
   .my-career__info__year--big::before
     display block
@@ -367,24 +383,12 @@ html.w-editor::after
     margin-top 0
     padding-top 0
 
-  a
-    display inline
-    text-decoration underline
-    text-decoration-color #fb9700ff
-    text-decoration-thickness 2px
-    text-underline-offset 0.4em
-    color black
-    font-weight 600
-    transition all 0.5s var(--ease-out-expo)
-
-  a:hover
-    text-decoration-color #fb970000
-    color #6c0b00
+  {a}
 
   figure:has(>div>img)
     // max-width 100%
     // width 100%
-    padding 20px 0
+    padding 20px
 
 .blog-item__share, .webinar-item__share
   &::before
