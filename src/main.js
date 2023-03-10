@@ -260,6 +260,3 @@ $('.accordion__title').on('click', function () {
     $('html').animate({ scrollTop: $(this).offset().top - 180 }, 800)
   }, 400)
 })
-
-// form -------------------------------------------
-// select('.form-success__trigger').click()
