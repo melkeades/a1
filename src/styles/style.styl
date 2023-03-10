@@ -2,7 +2,8 @@ a =
   a
     display inline
     text-decoration underline
-    text-decoration-color #fb970077
+    // text-decoration-color #fb970077
+    text-decoration-color rgba(251, 151, 0, 0.5)
     text-decoration-thickness 3px
     text-underline-offset 0.4em
     color black
@@ -10,11 +11,11 @@ a =
     transition all 0.5s var(--ease-out-expo)
 
   a:hover
-    text-decoration-color #fb970000 !important
+    text-decoration-color rgba(251, 151, 0, 0) !important
     color #6c0b00
 
 :root
-  --orange #fb9700
+  --orange rgb(251, 151, 0)
   --ease-out-expo cubic-bezier(0.16, 1, 0.3, 1)
 
 html.lenis
