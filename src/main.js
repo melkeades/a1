@@ -261,4 +261,3 @@ $('.accordion__title').on('click', function () {
 })
 
 // form -------------------------------------------
-// select('.form-success__trigger').click()
