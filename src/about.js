@@ -33,6 +33,8 @@ Swiper.use([
   FreeMode,
 ])
 
+// ABOUT ------------------------------------------------------------
+
 const imgsToScroll = gsap.utils.toArray('.text-img__img')
 const captionsToScroll = gsap.utils.toArray('.text-img__img__caption')
 // console.log(imgsToScroll)
@@ -117,16 +119,24 @@ blogMq.onchange = (e) => {
   }
 }
 
-// blogMq.onchange = (e) => {
-//   if (e.matches) {
-//     // 767 or less
-//     aboutBlogSliderInit()
-//   } else {
-//     // more than 767
-//     aboutBlogSlider.destroy()
-//   }
-// }
-
+// RESOURCES -------------------------------------------
+const featuredBlogSlider = new Swiper('.resources-hero__featured', {
+  speed: 600,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  effect: 'fade',
+  pagination: {
+    el: '.resources-hero__pagination',
+    bulletActiveClass: 'resources-hero__pagination__bullet--active',
+    bulletClass: 'resources-hero__pagination__bullet',
+  },
+  autoplay: {
+    delay: 5000,
+  },
+  fadeEffect: {
+    crossFade: true,
+  },
+})
 const blogSlider = new Swiper('.blog__swiper', {
   speed: 600,
   // slidesPerGroup: 1,
