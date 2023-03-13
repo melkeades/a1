@@ -1,7 +1,6 @@
 import './styles/style.styl'
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
-// import ScrollToPlugin from 'gsap/ScrollToPlugin '
 import ScrollTrigger from 'gsap/ScrollTrigger '
 import $ from 'jquery'
 import Swiper, {
@@ -235,7 +234,7 @@ howMq.onchange = (e) => {
   }
 }
 
-// faq -------------------------------------------
+// HOME > faq -------------------------------------------
 $('.accordion__title').on('click', function () {
   $(this).children('.accordion__arrow').toggleClass('rotate')
   $(this).next().slideToggle(800)
@@ -267,7 +266,6 @@ mm.add('(max-width: 768px)', () => {
 imgsToScroll.forEach((img) => {
   gsap.to(img, {
     backgroundPositionY: imgYmove,
-
     scrollTrigger: {
       trigger: img,
       scrub: true,
