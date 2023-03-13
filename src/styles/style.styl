@@ -203,7 +203,27 @@ html.w-editor::after
       background-size auto 110%
       transition all 1.5s
 
+  // 
+  // ABOUT
+  // 
+  .card--blog:hover
+    .card__title
+      span
+        // text-decoration underline
+        background-size 0 0.1em, 100% 0.1em
+        transition all 2s var(--ease-out-expo)
+
+    .blog-card__text
+      opacity 0.8
+      transition inherit
+
+    .blog-card__img
+      transform scale(1.1)
+      transition all 2s var(--ease-out-expo)
+
+  // 
   // RESOURCES
+  // 
   .resources-hero__pagination
     bottom 40px !important
     right 40px !important
@@ -375,21 +395,6 @@ html.w-editor::after
       background-size 100% 2px, 0 0.1em
       background-position 100% 100%, 0 98%
       background-repeat no-repeat
-
-.card--blog:hover
-  .card__title
-    span
-      // text-decoration underline
-      background-size 0 0.1em, 100% 0.1em
-      transition all 2s var(--ease-out-expo)
-
-  .blog-card__text
-    opacity 0.8
-    transition inherit
-
-  .blog-card__img
-    transform scale(1.1)
-    transition all 2s var(--ease-out-expo)
 
 .blog-item__text, .webinar-item__text
   >*:first-child
