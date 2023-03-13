@@ -183,6 +183,26 @@ html.w-editor::after
   .why__bullets
     display none
 
+  .link--card:hover
+    transition all 0.4s
+
+    .card--white-paper__hover
+      opacity 1
+
+    .pdf-img
+      transform translate(-50%, -70%)
+      // top -10px
+      transition all 0.4s
+      filter drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.1))
+
+    .white-paper__title
+      text-decoration underline
+      text-decoration-color #fb9700
+
+    .card--white-paper__img
+      background-size auto 110%
+      transition all 1.5s
+
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
     transform translate(-50%, -50%) scale(0.7)
@@ -230,6 +250,9 @@ html.w-editor::after
     // width 400px !important
 
 @media only screen and (max-width 480px)
+  .hero__info__title-mark::before
+    transform translate(-50%, -50%) scale(0.35)
+
   .hero__video
     video
       width auto
@@ -329,26 +352,6 @@ html.w-editor::after
 .white-paper__swiper
   overflow hidden
   filter drop-shadow(-70px 70px 70px rgba(0, 0, 0, 0.05))
-
-.link--card:hover
-  transition all 0.4s
-
-  .card--white-paper__hover
-    opacity 1
-
-  .pdf-img
-    transform translate(-50%, -70%)
-    // top -10px
-    transition all 0.4s
-    filter drop-shadow(-10px 10px 10px rgba(0, 0, 0, 0.1))
-
-  .white-paper__title
-    text-decoration underline
-    text-decoration-color #fb9700
-
-  .card--white-paper__img
-    background-size auto 110%
-    transition all 1.5s
 
 .pdf-img
   transition all 0.4s

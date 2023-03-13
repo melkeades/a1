@@ -59,6 +59,7 @@ Swiper.use([
 
 const hero = select('.hero__video')
 if (hero) {
+  // remove video
   // hero.replaceChildren()
 }
 
