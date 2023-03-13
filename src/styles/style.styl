@@ -225,11 +225,10 @@ html.w-editor::after
   // RESOURCES
   // 
   .resources-hero__pagination
-    bottom 40px !important
-    right 40px !important
+    bottom 30px !important
+    right 30px !important
     top auto !important
     left auto !important
-    // opacity 0.5
 
 @media screen and (max-width 991px)
   .hero__info__title-mark::before
@@ -359,6 +358,9 @@ html.w-editor::after
     content var(--year-mark-3)
 
 // RESOURCES -----------------------
+.resources-hero__rightarrow, .resources-hero__leftarrow
+  user-select none
+
 .hero__blog__item-wrap:hover
   cursor pointer
   transition all 0.5s

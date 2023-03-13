@@ -338,6 +338,10 @@ const featuredBlogSlider = new Swiper('.resources-hero__featured', {
     bulletActiveClass: 'resources-hero__pagination__bullet--active',
     bulletClass: 'resources-hero__pagination__bullet',
   },
+  navigation: {
+    nextEl: '.resources-hero__rightarrow',
+    prevEl: '.resources-hero__leftarrow',
+  },
   autoplay: {
     delay: 5000,
   },
