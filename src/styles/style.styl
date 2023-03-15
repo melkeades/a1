@@ -408,14 +408,31 @@ html.w-editor::after
   figure:has(>div>img)
     // max-width 100%
     // width 100%
-    padding 0 1.2em
+    // padding 0 1.2em 1em
+    // padding 0 0 1rem
+    margin-bottom 1.4rem
 
   figcaption
     font-size 0.6em
 
   hr
     opacity 0.5
-    margin-bottom 2.2em
+    margin-bottom 2.2rem
+
+  ul>li::marker
+    color var(--orange)
+
+  ol>li::marker
+    font-weight 600
+
+  ul, ol
+    padding-left 2em
+
+    li
+      text-indent 0.3em
+
+  ol:has(+p)
+    opacity 0.5
 
 .blog-item__share, .webinar-item__share
   &::before
