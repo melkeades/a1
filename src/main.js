@@ -349,31 +349,6 @@ const featuredBlogSlider = new Swiper('.resources-hero__featured', {
     crossFade: true,
   },
 })
-const blogSlider = new Swiper('.blog__swiper', {
-  speed: 600,
-  // slidesPerGroup: 1,
-  pagination: {
-    el: '.blog__pagination',
-    bulletActiveClass: 'blog__pagination__bullet--active',
-    bulletClass: 'blog__pagination__bullet',
-  },
-  navigation: {
-    nextEl: '.blog__rightarrow',
-    prevEl: '.blog__leftarrow',
-  },
-  breakpoints: {
-    240: {
-      spaceBetween: 30,
-      slidesPerView: 1,
-      // slidesPerGroup: 1, // columns per swipe
-    },
-    768: {
-      spaceBetween: 40,
-      slidesPerView: 2,
-      slidesPerGroup: 2, // columns per swipe
-    },
-  },
-})
 const whitePaperSlider = new Swiper('.white-paper__swiper', {
   speed: 600,
   // slidesPerGroup: 1,
@@ -399,35 +374,28 @@ const whitePaperSlider = new Swiper('.white-paper__swiper', {
   },
 })
 
-const webinarTitleSlider = new Swiper('.webinars__title__swiper', {
+const blogSlider = new Swiper('.blog__swiper', {
   speed: 600,
+  // slidesPerGroup: 1,
+  // pagination: {
+  //   el: '.blog__pagination',
+  //   bulletActiveClass: 'blog__pagination__bullet--active',
+  //   bulletClass: 'blog__pagination__bullet',
+  // },
+  navigation: {
+    nextEl: '.blog__rightarrow',
+    prevEl: '.blog__leftarrow',
+  },
   breakpoints: {
     240: {
-      direction: 'horizontal',
-      spaceBetween: 20,
-      slidesPerView: 3,
-      slidesPerGroup: 3, // columns per swipe
+      spaceBetween: 30,
+      slidesPerView: 1,
+      // slidesPerGroup: 1, // columns per swipe
     },
     768: {
-      direction: 'vertical',
-      slidesPerView: 5,
+      spaceBetween: 40,
+      slidesPerView: 2,
+      slidesPerGroup: 2, // columns per swipe
     },
   },
 })
-const webinarItemSlider = new Swiper('.webinars__item__swiper', {
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true,
-  },
-  speed: 600,
-  slidesPerGroup: 1,
-  spaceBetween: 20,
-  thumbs: {
-    swiper: webinarTitleSlider,
-  },
-  autoplay: {
-    delay: 5000,
-  },
-})
-
-webinarItemSlider.controller.control = webinarTitleSlider

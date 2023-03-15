@@ -405,6 +405,9 @@ html.w-editor::after
 
   {a}
 
+  p:has(+figure)
+    padding-bottom 0.5em
+
   figure:has(>div>img)
     // max-width 100%
     // width 100%
@@ -414,6 +417,9 @@ html.w-editor::after
 
   figcaption
     font-size 0.6em
+
+  figure:has(+p)
+    padding-bottom 0.5em
 
   hr
     opacity 0.5
@@ -431,7 +437,7 @@ html.w-editor::after
     li
       text-indent 0.3em
 
-  ol:has(+p)
+  ul:has(+p), ol:has(+p)
     opacity 0.5
 
 .blog-item__share, .webinar-item__share
