@@ -199,8 +199,8 @@ const testName = new Swiper('.testimonials__name', {
 })
 
 const testLogoClass = 'testimonials__logo'
-const testLogos = document.querySelectorAll('.' + testLogoClass)
 const testLogoActiveClass = testLogoClass + '--active'
+const testLogos = document.querySelectorAll('.' + testLogoClass)
 
 testQuote.controller.control = testName
 testQuote.on('slideChange', () => {
@@ -235,7 +235,11 @@ howMq.onchange = (e) => {
 }
 
 // HOME > faq -------------------------------------------
-$('.accordion__title').on('click', function () {
+const $accordionTitle = $('.accordion__title')
+const $firstAccordionTitle = $accordionTitle.first()
+$firstAccordionTitle.parent().children('.accordion__text').addClass('active')
+$firstAccordionTitle.children('.accordion__arrow').toggleClass('rotate')
+$accordionTitle.on('click', function () {
   $(this).children('.accordion__arrow').toggleClass('rotate')
   $(this).next().slideToggle(800)
 })
