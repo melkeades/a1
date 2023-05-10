@@ -21,8 +21,12 @@ a =
 html.lenis
   height auto
 
-.leftarrow, .rightarrow, .btn, .navbar, .link
+.side-arrow, .leftarrow, .rightarrow, .btn, .navbar, .link
   user-select none
+  transition all 0.5s var(--ease-out-expo)
+
+.my-career__nav__scrollbar
+  min-width 30px !important
 
 .w-nav
   z-index 200
@@ -143,6 +147,13 @@ html.w-editor::after
     align-items center
     // background #999
     // height 100% !important
+
+.faq__item__text
+  a
+    text-decoration underline
+
+  a:hover
+    text-decoration none
 
 .my-career__swiper
   overflow visible !important
